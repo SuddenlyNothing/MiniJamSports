@@ -4,9 +4,11 @@
 [ext_resource path="res://Assets/Ball.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 32.0
+radius = 8.5
 
-[node name="Ball" type="RigidBody2D"]
+[node name="Ball" type="RigidBody2D" groups=[
+"player",
+]]
 mode = 2
 linear_damp = 1.0
 applied_force = Vector2( 100, 0 )
