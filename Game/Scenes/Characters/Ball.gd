@@ -8,7 +8,7 @@ func _process(_delta : float) -> void:
 	var dir := get_input()
 	thrust = dir.normalized() * ball_thrust
 
-func _physics_process(_delta : float) -> void:
+func _physics_process(delta : float) -> void:
 	set_applied_force(thrust)
 
 

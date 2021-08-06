@@ -56,5 +56,10 @@ animation = "explode"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 10 )
 
+[node name="ActiveTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_Explosion_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="timeout" from="ActiveTimer" to="." method="_on_ActiveTimer_timeout"]
