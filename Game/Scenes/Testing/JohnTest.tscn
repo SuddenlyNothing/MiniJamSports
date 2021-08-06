@@ -1,0 +1,330 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/Obstacles/WallRotate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Ball.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Obstacles/Box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Obstacles/ExplosionActivator.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Obstacles/WallRotating.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/Ball.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Obstacles/Cannon.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float blue = 1.0;
+
+void vertex() {
+  // Animate Sprite moving in big circle around its location
+  VERTEX += vec2(cos(TIME)*10.0, sin(TIME)*10.0);
+}
+
+void fragment(){
+  COLOR = texture(TEXTURE, UV); //read from texture
+  COLOR.b = blue;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/blue = 1.0
+
+[sub_resource type="VisualShaderNodeTexture" id=3]
+texture = ExtResource( 3 )
+
+[sub_resource type="VisualShaderNodeTexture" id=4]
+texture = ExtResource( 2 )
+
+[sub_resource type="VisualShaderNodeExpression" id=5]
+size = Vector2( 739.346, 542.693 )
+expression = "uvOut.xy = uvIn.xy;
+uvOut.x += 0.5;
+"
+
+[sub_resource type="VisualShaderNodeInput" id=6]
+input_name = "uv"
+
+[sub_resource type="VisualShader" id=7]
+code = "shader_type canvas_item;
+uniform sampler2D tex_frg_2;
+uniform sampler2D tex_frg_3;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Input:5
+	vec3 n_out5p0 = vec3(UV, 0.0);
+
+// Expression:4
+	vec3 n_out4p0;
+	n_out4p0 = vec3(0.0, 0.0, 0.0);
+	{
+		n_out4p0.xy = n_out5p0.xy;
+		n_out4p0.x += 0.5;
+		
+	}
+
+// Texture:2
+	vec4 tex_frg_2_read = texture(tex_frg_2, n_out4p0.xy);
+	vec3 n_out2p0 = tex_frg_2_read.rgb;
+	float n_out2p1 = tex_frg_2_read.a;
+
+// Texture:3
+	vec4 tex_frg_3_read = texture(tex_frg_3, UV.xy);
+	vec3 n_out3p0 = tex_frg_3_read.rgb;
+	float n_out3p1 = tex_frg_3_read.a;
+
+// Output:0
+	COLOR.rgb = n_out2p0;
+	COLOR.a = n_out3p1;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -799.27, 2.51219 )
+mode = 1
+flags/light_only = false
+nodes/fragment/2/node = SubResource( 3 )
+nodes/fragment/2/position = Vector2( -360, -180 )
+nodes/fragment/3/node = SubResource( 4 )
+nodes/fragment/3/position = Vector2( -380, 280 )
+nodes/fragment/4/node = SubResource( 5 )
+nodes/fragment/4/position = Vector2( -1580, -100 )
+nodes/fragment/4/size = Vector2( 739.346, 542.693 )
+nodes/fragment/4/input_ports = "0,1,uvIn;"
+nodes/fragment/4/output_ports = "0,1,uvOut;"
+nodes/fragment/4/expression = "uvOut.xy = uvIn.xy;
+uvOut.x += 0.5;
+"
+nodes/fragment/5/node = SubResource( 6 )
+nodes/fragment/5/position = Vector2( -1900, 20 )
+nodes/fragment/connections = PoolIntArray( 4, 0, 2, 0, 5, 0, 4, 0, 3, 1, 0, 1, 2, 0, 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Ball" parent="." instance=ExtResource( 7 )]
+position = Vector2( 441.843, 200.977 )
+
+[node name="Cannon" parent="." instance=ExtResource( 8 )]
+position = Vector2( 532.671, 553.462 )
+
+[node name="Cannon2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 532.671, 432.199 )
+facing = 1
+
+[node name="Boxes" type="Node2D" parent="."]
+
+[node name="Box" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 533.464, 173.527 )
+
+[node name="Box2" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 533.464, 192.086 )
+
+[node name="Box3" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 532.736, 211.373 )
+
+[node name="Box4" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 532.372, 231.023 )
+
+[node name="Box5" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 533.1, 250.31 )
+
+[node name="Box6" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 533.464, 269.232 )
+
+[node name="Box7" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 552.47, 174.074 )
+
+[node name="Box8" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 552.47, 192.633 )
+
+[node name="Box9" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 551.743, 211.919 )
+
+[node name="Box10" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 551.379, 231.57 )
+
+[node name="Box11" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 552.107, 250.856 )
+
+[node name="Box12" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 552.47, 269.779 )
+
+[node name="Box13" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 515.223, 172.579 )
+
+[node name="Box14" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 515.223, 191.138 )
+
+[node name="Box15" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 514.496, 210.425 )
+
+[node name="Box16" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 514.132, 230.075 )
+
+[node name="Box17" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 514.86, 249.361 )
+
+[node name="Box18" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 515.223, 268.284 )
+
+[node name="Box19" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 571.767, 174.438 )
+
+[node name="Box20" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 571.767, 192.997 )
+
+[node name="Box21" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 571.04, 212.284 )
+
+[node name="Box22" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 570.676, 231.934 )
+
+[node name="Box23" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 571.403, 251.22 )
+
+[node name="Box24" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 571.767, 270.143 )
+
+[node name="Box25" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 498.184, 172.762 )
+
+[node name="Box26" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 498.184, 191.32 )
+
+[node name="Box27" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 497.456, 210.607 )
+
+[node name="Box28" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 497.092, 230.257 )
+
+[node name="Box29" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 497.82, 249.544 )
+
+[node name="Box30" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 498.184, 268.466 )
+
+[node name="Box31" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 534.279, 59.4911 )
+
+[node name="Box32" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 534.279, 78.0498 )
+
+[node name="Box33" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 533.551, 97.3363 )
+
+[node name="Box34" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 533.187, 116.987 )
+
+[node name="Box35" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 533.914, 136.273 )
+
+[node name="Box36" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 534.279, 155.196 )
+
+[node name="Box37" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 553.285, 60.0377 )
+
+[node name="Box38" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 553.285, 78.5964 )
+
+[node name="Box39" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 552.557, 97.883 )
+
+[node name="Box40" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 552.193, 117.533 )
+
+[node name="Box41" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 552.921, 136.82 )
+
+[node name="Box42" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 553.285, 155.742 )
+
+[node name="Box43" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 516.038, 58.5431 )
+
+[node name="Box44" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 516.038, 77.1018 )
+
+[node name="Box45" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 515.31, 96.3883 )
+
+[node name="Box46" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 514.946, 116.039 )
+
+[node name="Box47" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 515.674, 135.325 )
+
+[node name="Box48" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 516.038, 154.248 )
+
+[node name="Box49" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 572.582, 60.4021 )
+
+[node name="Box50" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 572.582, 78.9608 )
+
+[node name="Box51" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 571.854, 98.2473 )
+
+[node name="Box52" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 571.49, 117.898 )
+
+[node name="Box53" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 572.218, 137.184 )
+
+[node name="Box54" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 572.582, 156.107 )
+
+[node name="Box55" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 498.999, 58.7253 )
+
+[node name="Box56" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 498.999, 77.284 )
+
+[node name="Box57" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 498.271, 96.5705 )
+
+[node name="Box58" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 497.907, 116.221 )
+
+[node name="Box59" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 498.635, 135.507 )
+
+[node name="Box60" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 498.999, 154.43 )
+
+[node name="WallRotate" parent="." instance=ExtResource( 1 )]
+position = Vector2( 146.53, 214.049 )
+
+[node name="WallRotating" parent="." instance=ExtResource( 6 )]
+position = Vector2( 174.798, 361.012 )
+
+[node name="ExplosionActivator" parent="." instance=ExtResource( 5 )]
+position = Vector2( 395.86, 310.783 )
+
+[node name="ExplosionActivator2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 373.716, 310.006 )
+
+[node name="SpriteShaderTest" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 281.139, 131.516 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="VisShaderTest" type="Sprite" parent="."]
+material = SubResource( 8 )
+position = Vector2( 295.986, 668.095 )
+scale = Vector2( 4.10079, 3.69023 )
+texture = ExtResource( 2 )
