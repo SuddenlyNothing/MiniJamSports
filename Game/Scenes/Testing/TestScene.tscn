@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Obstacles/Cannon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Obstacles/WallRotate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Obstacles/WallRotating.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Obstacles/Explosion.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Obstacles/ExplosionActivator.tscn" type="PackedScene" id=6]
 
 [node name="TestScene" type="Node2D"]
 
@@ -207,5 +207,8 @@ position = Vector2( 146.53, 214.049 )
 [node name="WallRotating" parent="." instance=ExtResource( 5 )]
 position = Vector2( 174.798, 361.012 )
 
-[node name="Explosion" parent="." instance=ExtResource( 6 )]
-position = Vector2( 532.964, 191.232 )
+[node name="ExplosionActivator" parent="." instance=ExtResource( 6 )]
+position = Vector2( 395.86, 310.783 )
+
+[node name="ExplosionActivator2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 373.716, 310.006 )
