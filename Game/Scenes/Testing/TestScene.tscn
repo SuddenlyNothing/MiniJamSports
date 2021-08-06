@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Characters/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Obstacles/Box.tscn" type="PackedScene" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://Scenes/Obstacles/GravityWell.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Characters/PlayerCatcher.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Testing/TestScene.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Obstacles/Boost.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Obstacles/Friction.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Obstacles/Ice.tscn" type="PackedScene" id=12]
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource( 9 )
@@ -48,6 +51,17 @@ position = Vector2( 341.62, 405.832 )
 [node name="PlayerCatcher" parent="." instance=ExtResource( 8 )]
 position = Vector2( 251.238, 90.297 )
 player_node_path = NodePath("../Ball")
+
+[node name="Boost" parent="." instance=ExtResource( 10 )]
+position = Vector2( 253.591, 575.508 )
+rotation = 3.14159
+facing = 2
+
+[node name="Friction" parent="." instance=ExtResource( 11 )]
+position = Vector2( 600.139, 746.945 )
+
+[node name="Ice" parent="." instance=ExtResource( 12 )]
+position = Vector2( 382.444, -160.316 )
 
 [connection signal="started" from="Ball" to="." method="_on_Ball_started"]
 [connection signal="caught_player" from="PlayerCatcher" to="." method="_on_PlayerCatcher_caught_player"]

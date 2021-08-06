@@ -1,6 +1,6 @@
 extends Area2D
 
-const MOVE_SPEED := 100
+const MOVE_SPEED := 0
 
 signal caught_player
 
