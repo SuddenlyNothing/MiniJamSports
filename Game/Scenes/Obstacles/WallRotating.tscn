@@ -5,3 +5,6 @@
 
 [node name="WallRotating" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="Wall" parent="." index="1"]
+angular_velocity = 5.0
