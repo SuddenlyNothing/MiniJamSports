@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Characters/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Obstacles/Box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Obstacles/Cannon.tscn" type="PackedScene" id=3]
 
 [node name="TestScene" type="Node2D"]
 
@@ -25,3 +26,6 @@ position = Vector2( 541.663, 250.127 )
 
 [node name="Box6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 542.027, 269.05 )
+
+[node name="Cannon" parent="." instance=ExtResource( 3 )]
+position = Vector2( 456.016, 486.967 )
