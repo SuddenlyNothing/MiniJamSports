@@ -7,7 +7,6 @@
 radius = 4.5
 
 [node name="CannonBall" type="RigidBody2D"]
-mass = 500.0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
