@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Characters/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Obstacles/Box.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Obstacles/Cannon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Obstacles/WallRotate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Obstacles/WallRotating.tscn" type="PackedScene" id=5]
 
 [node name="TestScene" type="Node2D"]
 
@@ -200,4 +201,7 @@ position = Vector2( 498.635, 135.507 )
 position = Vector2( 498.999, 154.43 )
 
 [node name="WallRotate" parent="." instance=ExtResource( 4 )]
-position = Vector2( 256.947, 268.283 )
+position = Vector2( 146.53, 214.049 )
+
+[node name="WallRotating" parent="." instance=ExtResource( 5 )]
+position = Vector2( 174.798, 361.012 )
