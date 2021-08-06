@@ -8,7 +8,8 @@ func _on_ExplosionActivator_body_entered(body):
 
 
 func _on_ExplosionActivator_area_entered(area):
-	explode()
+	if area.is_in_group("explosion"):
+		explode()
 
 
 func explode() -> void:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Area2D.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Obstacles/PlayerCatcher.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Temp/Hand.png" type="Texture" id=2]
 
 [node name="PlayerCatcher" type="Area2D"]

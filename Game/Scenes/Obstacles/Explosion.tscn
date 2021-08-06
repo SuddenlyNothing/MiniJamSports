@@ -46,7 +46,9 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=10]
 radius = 32.0
 
-[node name="Explosion" type="Area2D"]
+[node name="Explosion" type="Area2D" groups=[
+"explosion",
+]]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
