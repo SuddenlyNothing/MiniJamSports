@@ -1,8 +1,11 @@
 extends RigidBody2D
 
+signal started
+
 export(int) var ball_thrust := 500
 
 var thrust := Vector2()
+var started := false
 
 func _process(_delta : float) -> void:
 	var dir := get_input()
@@ -22,4 +25,7 @@ func get_input() -> Vector2:
 		dir.x += 1
 	if Input.is_action_pressed("move_up"):
 		dir.y -= 1
+	if not started and dir != Vector2():
+		emit_signal("started")
+		started = true
 	return dir

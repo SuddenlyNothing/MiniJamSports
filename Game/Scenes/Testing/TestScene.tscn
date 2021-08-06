@@ -16,6 +16,9 @@ script = ExtResource( 9 )
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 position = Vector2( 442, 200.977 )
 
+[node name="Camera2D" type="Camera2D" parent="Ball"]
+current = true
+
 [node name="Cannon" parent="." instance=ExtResource( 3 )]
 position = Vector2( 532.671, 553.462 )
 
@@ -25,11 +28,10 @@ facing = 1
 
 [node name="WallRotate" parent="." instance=ExtResource( 4 )]
 position = Vector2( 146.53, 214.049 )
+facing = 1
 
 [node name="WallRotating" parent="." instance=ExtResource( 5 )]
 position = Vector2( 174.798, 361.012 )
-facing = 2
-angular_velocity = -5
 
 [node name="ExplosionActivator" parent="." instance=ExtResource( 6 )]
 position = Vector2( 442, 325.978 )
@@ -47,4 +49,5 @@ position = Vector2( 341.62, 405.832 )
 position = Vector2( 251.238, 90.297 )
 player_node_path = NodePath("../Ball")
 
+[connection signal="started" from="Ball" to="." method="_on_Ball_started"]
 [connection signal="caught_player" from="PlayerCatcher" to="." method="_on_PlayerCatcher_caught_player"]

@@ -6,7 +6,6 @@
 extents = Vector2( 8, 8 )
 
 [node name="Box" type="RigidBody2D"]
-mass = 5.0
 sleeping = true
 linear_damp = 5.0
 angular_damp = 5.0

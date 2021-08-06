@@ -8,10 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "StaticBody2D",
+"class": "WallRotate",
+"language": "GDScript",
+"path": "res://Scenes/Obstacles/WallRotate.gd"
+} ]
+_global_script_class_icons={
+"WallRotate": ""
+}
+
 [application]
 
 config/name="MiniGolf"
-run/main_scene="res://Scenes/Testing/TestScene.tscn"
+run/main_scene="res://Scenes/Testing/LevelMockup.tscn"
 config/icon="res://icon.png"
 
 [autoload]
