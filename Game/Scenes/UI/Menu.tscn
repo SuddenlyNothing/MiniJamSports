@@ -156,26 +156,29 @@ alignment = 1
 [node name="SceneChange" parent="V3/H" groups=[
 "moving_button",
 ] instance=ExtResource( 4 )]
-margin_left = 369.0
-margin_right = 397.0
+margin_left = 211.0
+margin_right = 381.0
 margin_bottom = 36.0
-text = "1"
+text = "John Test"
+next_scene = "res://Scenes/Testing/JohnTest.tscn"
 
 [node name="SceneChange2" parent="V3/H" groups=[
 "moving_button",
 ] instance=ExtResource( 4 )]
-margin_left = 497.0
-margin_right = 525.0
+margin_left = 481.0
+margin_right = 569.0
 margin_bottom = 36.0
-text = "2"
+text = "Demo"
+next_scene = "res://Scenes/Testing/LevelMockup.tscn"
 
 [node name="SceneChange3" parent="V3/H" groups=[
 "moving_button",
 ] instance=ExtResource( 4 )]
-margin_left = 625.0
-margin_right = 653.0
+margin_left = 669.0
+margin_right = 811.0
 margin_bottom = 36.0
-text = "3"
+text = "Testing"
+next_scene = "res://Scenes/Testing/TestScene.tscn"
 
 [node name="H2" type="HBoxContainer" parent="V3"]
 margin_top = 214.0

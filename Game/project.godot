@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="MiniGolf"
-run/main_scene="res://Scenes/Testing/LevelMockup.tscn"
+run/main_scene="res://Scenes/UI/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
