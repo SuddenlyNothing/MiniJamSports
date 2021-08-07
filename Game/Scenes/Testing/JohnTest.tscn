@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Obstacles/WallRotate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Obstacles/WallRotating.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Ball.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Obstacles/Cannon.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/BlockTiles.png" type="Texture" id=11]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -24,7 +25,7 @@ void fragment(){
   COLOR.b = blue;
 }"
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=13]
 shader = SubResource( 1 )
 shader_param/blue = 1.0
 
@@ -89,7 +90,6 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -799.27, 2.51219 )
 mode = 1
 flags/light_only = false
 nodes/fragment/2/node = SubResource( 3 )
@@ -108,8 +108,58 @@ nodes/fragment/5/node = SubResource( 6 )
 nodes/fragment/5/position = Vector2( -1900, 20 )
 nodes/fragment/connections = PoolIntArray( 4, 0, 2, 0, 5, 0, 4, 0, 3, 1, 0, 1, 2, 0, 0, 0 )
 
-[sub_resource type="ShaderMaterial" id=8]
+[sub_resource type="ShaderMaterial" id=14]
 shader = SubResource( 7 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 128, 128, 0, 128, 128 )
+
+[sub_resource type="TileSet" id=10]
+0/name = "BlockTiles.png 0"
+0/texture = ExtResource( 11 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 128, 128 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 11 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "BlockTiles.png 1"
+1/texture = ExtResource( 11 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 128, 0, 128, 128 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 12 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
 
 [node name="TestScene" type="Node2D"]
 
@@ -126,184 +176,184 @@ facing = 1
 [node name="Boxes" type="Node2D" parent="."]
 
 [node name="Box" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 533.464, 173.527 )
+position = Vector2( 876.417, 220.839 )
 
 [node name="Box2" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 533.464, 192.086 )
+position = Vector2( 876.417, 239.398 )
 
 [node name="Box3" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 532.736, 211.373 )
+position = Vector2( 875.689, 258.685 )
 
 [node name="Box4" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 532.372, 231.023 )
+position = Vector2( 875.325, 278.335 )
 
 [node name="Box5" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 533.1, 250.31 )
+position = Vector2( 876.053, 297.622 )
 
 [node name="Box6" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 533.464, 269.232 )
+position = Vector2( 876.417, 316.544 )
 
 [node name="Box7" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 552.47, 174.074 )
+position = Vector2( 895.423, 221.386 )
 
 [node name="Box8" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 552.47, 192.633 )
+position = Vector2( 895.423, 239.945 )
 
 [node name="Box9" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 551.743, 211.919 )
+position = Vector2( 894.696, 259.231 )
 
 [node name="Box10" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 551.379, 231.57 )
+position = Vector2( 894.332, 278.882 )
 
 [node name="Box11" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 552.107, 250.856 )
+position = Vector2( 895.06, 298.168 )
 
 [node name="Box12" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 552.47, 269.779 )
+position = Vector2( 895.423, 317.091 )
 
 [node name="Box13" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 515.223, 172.579 )
+position = Vector2( 858.176, 219.891 )
 
 [node name="Box14" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 515.223, 191.138 )
+position = Vector2( 858.176, 238.45 )
 
 [node name="Box15" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 514.496, 210.425 )
+position = Vector2( 857.449, 257.737 )
 
 [node name="Box16" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 514.132, 230.075 )
+position = Vector2( 857.085, 277.387 )
 
 [node name="Box17" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 514.86, 249.361 )
+position = Vector2( 857.813, 296.673 )
 
 [node name="Box18" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 515.223, 268.284 )
+position = Vector2( 858.176, 315.596 )
 
 [node name="Box19" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 571.767, 174.438 )
+position = Vector2( 914.72, 221.75 )
 
 [node name="Box20" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 571.767, 192.997 )
+position = Vector2( 914.72, 240.309 )
 
 [node name="Box21" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 571.04, 212.284 )
+position = Vector2( 913.993, 259.596 )
 
 [node name="Box22" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 570.676, 231.934 )
+position = Vector2( 913.629, 279.246 )
 
 [node name="Box23" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 571.403, 251.22 )
+position = Vector2( 914.356, 298.532 )
 
 [node name="Box24" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 571.767, 270.143 )
+position = Vector2( 914.72, 317.455 )
 
 [node name="Box25" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 498.184, 172.762 )
+position = Vector2( 841.137, 220.074 )
 
 [node name="Box26" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 498.184, 191.32 )
+position = Vector2( 841.137, 238.632 )
 
 [node name="Box27" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 497.456, 210.607 )
+position = Vector2( 840.409, 257.919 )
 
 [node name="Box28" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 497.092, 230.257 )
+position = Vector2( 840.045, 277.569 )
 
 [node name="Box29" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 497.82, 249.544 )
+position = Vector2( 840.773, 296.856 )
 
 [node name="Box30" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 498.184, 268.466 )
+position = Vector2( 841.137, 315.778 )
 
 [node name="Box31" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 534.279, 59.4911 )
+position = Vector2( 877.232, 106.804 )
 
 [node name="Box32" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 534.279, 78.0498 )
+position = Vector2( 877.232, 125.362 )
 
 [node name="Box33" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 533.551, 97.3363 )
+position = Vector2( 876.504, 144.649 )
 
 [node name="Box34" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 533.187, 116.987 )
+position = Vector2( 876.14, 164.299 )
 
 [node name="Box35" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 533.914, 136.273 )
+position = Vector2( 876.867, 183.585 )
 
 [node name="Box36" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 534.279, 155.196 )
+position = Vector2( 877.232, 202.508 )
 
 [node name="Box37" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 553.285, 60.0377 )
+position = Vector2( 896.238, 107.35 )
 
 [node name="Box38" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 553.285, 78.5964 )
+position = Vector2( 896.238, 125.909 )
 
 [node name="Box39" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 552.557, 97.883 )
+position = Vector2( 895.51, 145.196 )
 
 [node name="Box40" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 552.193, 117.533 )
+position = Vector2( 895.146, 164.845 )
 
 [node name="Box41" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 552.921, 136.82 )
+position = Vector2( 895.874, 184.132 )
 
 [node name="Box42" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 553.285, 155.742 )
+position = Vector2( 896.238, 203.054 )
 
 [node name="Box43" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 516.038, 58.5431 )
+position = Vector2( 858.991, 105.856 )
 
 [node name="Box44" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 516.038, 77.1018 )
+position = Vector2( 858.991, 124.414 )
 
 [node name="Box45" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 515.31, 96.3883 )
+position = Vector2( 858.263, 143.701 )
 
 [node name="Box46" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 514.946, 116.039 )
+position = Vector2( 857.899, 163.351 )
 
 [node name="Box47" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 515.674, 135.325 )
+position = Vector2( 858.627, 182.637 )
 
 [node name="Box48" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 516.038, 154.248 )
+position = Vector2( 858.991, 201.56 )
 
 [node name="Box49" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 572.582, 60.4021 )
+position = Vector2( 915.535, 107.715 )
 
 [node name="Box50" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 572.582, 78.9608 )
+position = Vector2( 915.535, 126.273 )
 
 [node name="Box51" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 571.854, 98.2473 )
+position = Vector2( 914.807, 145.56 )
 
 [node name="Box52" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 571.49, 117.898 )
+position = Vector2( 914.443, 165.21 )
 
 [node name="Box53" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 572.218, 137.184 )
+position = Vector2( 915.171, 184.496 )
 
 [node name="Box54" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 572.582, 156.107 )
+position = Vector2( 915.535, 203.419 )
 
 [node name="Box55" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 498.999, 58.7253 )
+position = Vector2( 841.952, 106.038 )
 
 [node name="Box56" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 498.999, 77.284 )
+position = Vector2( 841.952, 124.597 )
 
 [node name="Box57" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 498.271, 96.5705 )
+position = Vector2( 841.224, 143.883 )
 
 [node name="Box58" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 497.907, 116.221 )
+position = Vector2( 840.86, 163.533 )
 
 [node name="Box59" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 498.635, 135.507 )
+position = Vector2( 841.588, 182.819 )
 
 [node name="Box60" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 498.999, 154.43 )
+position = Vector2( 841.952, 201.742 )
 
 [node name="WallRotate" parent="." instance=ExtResource( 1 )]
 position = Vector2( 146.53, 214.049 )
@@ -318,13 +368,21 @@ position = Vector2( 395.86, 310.783 )
 position = Vector2( 373.716, 310.006 )
 
 [node name="SpriteShaderTest" type="Sprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 13 )
 position = Vector2( 281.139, 131.516 )
 z_index = -1
 texture = ExtResource( 2 )
 
 [node name="VisShaderTest" type="Sprite" parent="."]
-material = SubResource( 8 )
-position = Vector2( 295.986, 668.095 )
+material = SubResource( 14 )
+position = Vector2( 662.307, 202.407 )
 scale = Vector2( 4.10079, 3.69023 )
+z_index = -1
 texture = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -2
+tile_set = SubResource( 10 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -1, 0, 0, -65535, 0, 0, -65533, 0, 0, -65531, 0, 0, -65529, 0, 0, -65527, 0, 0, -65525, 0, 0, -65523, 0, 0, -65521, 0, 0, 131071, 0, 0, 65551, 0, 0, 262143, 0, 0, 196623, 0, 0, 393215, 0, 0, 327693, 1, 0, 327695, 0, 0, 524287, 0, 0, 458763, 1, 0, 458765, 0, 0, 458767, 0, 0, 655359, 0, 0, 589825, 0, 0, 589827, 0, 0, 589829, 0, 0, 589831, 0, 0, 589833, 0, 0, 589835, 0, 0, 589837, 0, 0, 589839, 0, 0 )
