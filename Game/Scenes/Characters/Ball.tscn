@@ -5,19 +5,19 @@
 [ext_resource path="res://Assets/Ball2.png" type="Texture" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 
-[sub_resource type="VisualShaderNodeTexture" id=2]
+[sub_resource type="VisualShaderNodeTexture" id=1]
 texture = ExtResource( 3 )
 
-[sub_resource type="VisualShaderNodeExpression" id=5]
+[sub_resource type="VisualShaderNodeExpression" id=2]
 size = Vector2( 1142.95, 733.062 )
 expression = "uvOut.xy = uvIn.xy;
 uvOut.x += 0.5;
 "
 
-[sub_resource type="VisualShaderNodeInput" id=6]
+[sub_resource type="VisualShaderNodeInput" id=3]
 input_name = "uv"
 
-[sub_resource type="VisualShader" id=3]
+[sub_resource type="VisualShader" id=4]
 code = "shader_type canvas_item;
 uniform sampler2D tex_frg_2;
 
@@ -61,9 +61,9 @@ graph_offset = Vector2( -690.22, -53.9183 )
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2( 540, 220 )
-nodes/fragment/2/node = SubResource( 2 )
+nodes/fragment/2/node = SubResource( 1 )
 nodes/fragment/2/position = Vector2( -20, -40 )
-nodes/fragment/3/node = SubResource( 5 )
+nodes/fragment/3/node = SubResource( 2 )
 nodes/fragment/3/position = Vector2( -1360, 0 )
 nodes/fragment/3/size = Vector2( 1142.95, 733.062 )
 nodes/fragment/3/input_ports = "0,1,uvIn;"
@@ -71,14 +71,14 @@ nodes/fragment/3/output_ports = "0,1,uvOut;"
 nodes/fragment/3/expression = "uvOut.xy = uvIn.xy;
 uvOut.x += 0.5;
 "
-nodes/fragment/4/node = SubResource( 6 )
+nodes/fragment/4/node = SubResource( 3 )
 nodes/fragment/4/position = Vector2( -1800, 140 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 2, 1, 0, 1, 4, 0, 3, 0, 3, 0, 2, 0 )
 
-[sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 3 )
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=6]
 radius = 32.0
 
 [node name="Ball" type="RigidBody2D" groups=[
@@ -93,8 +93,8 @@ texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
-material = SubResource( 4 )
+material = SubResource( 5 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 6 )

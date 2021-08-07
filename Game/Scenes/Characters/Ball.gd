@@ -9,9 +9,15 @@ var started := false
 
 func _process(_delta : float) -> void:
 	var dir := get_input()
+	if not started:
+		return
+	if dir == Vector2() and linear_velocity == Vector2():
+		print("haha die")
 	thrust = dir.normalized() * ball_thrust
 
 func _physics_process(delta : float) -> void:
+	if not started:
+		return
 	set_applied_force(thrust)
 
 

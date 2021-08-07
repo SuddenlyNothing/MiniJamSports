@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Testing/LevelMockup.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Characters/Ball.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Scenes/Obstacles/WallRotating.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Obstacles/GravityWell.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Obstacles/ExplosionActivator.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Obstacles/Bounce.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Obstacles/BouncyGravity.tscn" type="PackedScene" id=11]
 
 [node name="LevelMockup" type="Node2D"]
 script = ExtResource( 1 )
@@ -291,6 +293,12 @@ position = Vector2( 4544.76, 83.7545 )
 
 [node name="ExplosionActivator45" parent="Obstacles" instance=ExtResource( 9 )]
 position = Vector2( 4467.29, 75.2333 )
+
+[node name="Bounce" parent="Obstacles" instance=ExtResource( 10 )]
+position = Vector2( 406.079, 86.1707 )
+
+[node name="BouncyGravity" parent="Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 391.12, 501.979 )
 
 [node name="PlayerCatcher" parent="." instance=ExtResource( 4 )]
 position = Vector2( -159.208, 0 )
