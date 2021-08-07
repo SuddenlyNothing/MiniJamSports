@@ -1,15 +1,16 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Obstacles/WallRotate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Effects/Grass.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/BG/DirtBase.tres" type="Texture" id=3]
 [ext_resource path="res://Scenes/Obstacles/Box.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Obstacles/ExplosionActivator.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Obstacles/WallRotating.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Ball.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Obstacles/Cannon.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Pattern0.png" type="Texture" id=9]
-[ext_resource path="res://Assets/BlockTiles.png" type="Texture" id=11]
+[ext_resource path="res://Assets/BG/Pattern0.png" type="Texture" id=9]
+[ext_resource path="res://Assets/BG/GrassEdge0.tres" type="Texture" id=10]
+[ext_resource path="res://Assets/BG/BlockTiles.png" type="Texture" id=11]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -26,26 +27,26 @@ void fragment(){
   COLOR.b = blue;
 }"
 
-[sub_resource type="ShaderMaterial" id=18]
+[sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 shader_param/blue = 1.0
 
-[sub_resource type="ConvexPolygonShape2D" id=11]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=12]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 0, 128, 128, 0, 128, 128 )
 
-[sub_resource type="ConvexPolygonShape2D" id=15]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
-[sub_resource type="ConvexPolygonShape2D" id=16]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 64, 128, 0, 128, 0, 0, 64, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=17]
+[sub_resource type="ConvexPolygonShape2D" id=7]
 points = PoolVector2Array( 128, 64, 0, 64, 0, 0, 128, 0 )
 
-[sub_resource type="TileSet" id=10]
+[sub_resource type="TileSet" id=8]
 0/name = "BlockTiles.png 0"
 0/texture = ExtResource( 11 )
 0/tex_offset = Vector2( 0, 0 )
@@ -56,14 +57,14 @@ points = PoolVector2Array( 128, 64, 0, 64, 0, 0, 128, 0 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 11 )
+0/shape = SubResource( 3 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 11 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -77,14 +78,14 @@ points = PoolVector2Array( 128, 64, 0, 64, 0, 0, 128, 0 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 12 )
+1/shape = SubResource( 4 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 12 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -98,14 +99,14 @@ points = PoolVector2Array( 128, 64, 0, 64, 0, 0, 128, 0 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 15 )
+2/shape = SubResource( 5 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 15 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -133,14 +134,14 @@ points = PoolVector2Array( 128, 64, 0, 64, 0, 0, 128, 0 )
 4/navigation_offset = Vector2( 0, 0 )
 4/shape_offset = Vector2( 0, 0 )
 4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape = SubResource( 16 )
+4/shape = SubResource( 6 )
 4/shape_one_way = false
 4/shape_one_way_margin = 1.0
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 16 ),
+"shape": SubResource( 6 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/z_index = 0
@@ -154,19 +155,20 @@ points = PoolVector2Array( 128, 64, 0, 64, 0, 0, 128, 0 )
 5/navigation_offset = Vector2( 0, 0 )
 5/shape_offset = Vector2( 0, 0 )
 5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape = SubResource( 17 )
+5/shape = SubResource( 7 )
 5/shape_one_way = false
 5/shape_one_way_margin = 1.0
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 17 ),
+"shape": SubResource( 7 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
 
 [node name="TestScene" type="Node2D"]
+position = Vector2( -13.8435, -47.1937 )
 
 [node name="Ball" parent="." instance=ExtResource( 7 )]
 position = Vector2( 354.068, 160.883 )
@@ -339,18 +341,43 @@ position = Vector2( 395.86, 310.783 )
 position = Vector2( 373.716, 310.006 )
 
 [node name="SpriteShaderTest" type="Sprite" parent="."]
-material = SubResource( 18 )
+material = SubResource( 2 )
 position = Vector2( 281.139, 131.516 )
 z_index = -1
 texture = ExtResource( 2 )
 
-[node name="Grass" parent="." instance=ExtResource( 3 )]
-position = Vector2( 61.6736, 55.4744 )
-scale = Vector2( 4.12375, 4.217 )
-
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -2
-tile_set = SubResource( 10 )
-show_collision = true
+tile_set = SubResource( 8 )
 format = 1
 tile_data = PoolIntArray( -131055, 0, 0, -1, 0, 0, -65535, 0, 0, -65533, 0, 0, -65531, 0, 0, -65529, 0, 0, -65527, 0, 0, -65525, 0, 0, -65523, 0, 0, -65521, 0, 0, -65517, 0, 0, 17, 2, 0, 18, 2, 0, 131071, 0, 0, 131077, 3, 0, 262143, 0, 0, 262153, 2, 0, 393215, 0, 0, 327689, 2, 0, 327693, 1, 0, 327695, 0, 0, 327697, 2, 0, 327698, 0, 0, 393233, 4, 0, 524287, 0, 0, 458763, 1, 0, 458765, 0, 0, 458767, 0, 0, 458770, 2, 0, 458771, 0, 0, 655359, 0, 0, 589825, 0, 0, 589827, 0, 0, 589829, 2, 0, 589830, 5, 0, 589832, 0, 0, 589834, 4, 0, 589835, 0, 0, 589837, 0, 0, 589839, 2, 0, 655365, 0, 0, 655367, 2, 0, 720898, 0, 0, 720903, 0, 0, 720905, 2, 0, 720906, 5, 0, 720908, 0, 0, 786441, 0, 0, 786443, 2, 0 )
+
+[node name="BG" type="Node2D" parent="."]
+
+[node name="GrassEdges" type="Sprite" parent="BG"]
+position = Vector2( 912.089, 399.255 )
+rotation = -0.805026
+scale = Vector2( 0.357451, 0.575389 )
+z_index = -9
+texture = ExtResource( 10 )
+
+[node name="GrassEdges3" type="Sprite" parent="BG"]
+position = Vector2( 609.367, 322.733 )
+rotation = -1.57079
+scale = Vector2( 0.408912, 0.619185 )
+z_index = -9
+texture = ExtResource( 10 )
+
+[node name="GrassEdges2" type="Sprite" parent="BG"]
+position = Vector2( 785.925, 519.309 )
+rotation = -0.805026
+scale = Vector2( 0.467233, 0.568467 )
+z_index = -9
+texture = ExtResource( 10 )
+
+[node name="DirtBase" type="Sprite" parent="BG"]
+visible = false
+position = Vector2( 655.885, 299.033 )
+scale = Vector2( 9.94334, 4.65217 )
+z_index = -10
+texture = ExtResource( 3 )
