@@ -7,6 +7,8 @@ func _on_Friction_body_entered(body) -> void:
 		return
 	var body_damp = body.get_linear_damp()
 	original_damp[body] = body_damp
+	if body_damp <= 0:
+		body_damp = 0.1
 	body.set_linear_damp(body_damp * 10)
 
 
