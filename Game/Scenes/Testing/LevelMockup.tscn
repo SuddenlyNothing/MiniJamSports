@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Testing/LevelMockup.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Characters/Ball.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Obstacles/ExplosionActivator.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Obstacles/Bounce.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Obstacles/BouncyGravity.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Obstacles/CaveHole.tscn" type="PackedScene" id=12]
 
 [node name="LevelMockup" type="Node2D"]
 script = ExtResource( 1 )
@@ -53,7 +54,7 @@ position = Vector2( 736.993, 18.1702 )
 position = Vector2( 940.198, 41.0206 )
 
 [node name="Box11" parent="Obstacles" instance=ExtResource( 3 )]
-position = Vector2( 1054.45, 49.1814 )
+position = Vector2( 1069.69, -5.87538 )
 
 [node name="Box12" parent="Obstacles" instance=ExtResource( 3 )]
 position = Vector2( 1198.9, 66.3192 )
@@ -74,7 +75,7 @@ position = Vector2( 672.718, 287.756 )
 position = Vector2( 835.002, 303.212 )
 
 [node name="Box24" parent="Obstacles" instance=ExtResource( 3 )]
-position = Vector2( 1008.88, 303.212 )
+position = Vector2( 1077.93, 271.484 )
 
 [node name="Box25" parent="Obstacles" instance=ExtResource( 3 )]
 position = Vector2( 1231.05, 326.396 )
@@ -86,22 +87,22 @@ position = Vector2( 1451.3, 351.511 )
 position = Vector2( 1640.63, 394.014 )
 
 [node name="Box28" parent="Obstacles" instance=ExtResource( 3 )]
-position = Vector2( 1000.2, 259.552 )
+position = Vector2( 1006.42, 226.891 )
 
 [node name="Box29" parent="Obstacles" instance=ExtResource( 3 )]
-position = Vector2( 1011.7, 221.758 )
+position = Vector2( 1075.78, 197.185 )
 
 [node name="Box30" parent="Obstacles" instance=ExtResource( 3 )]
-position = Vector2( 1030.87, 176.844 )
+position = Vector2( 971.769, 156.003 )
 
 [node name="Box31" parent="Obstacles" instance=ExtResource( 3 )]
-position = Vector2( 1044.57, 116.046 )
+position = Vector2( 1023.73, 84.6294 )
 
 [node name="Box32" parent="Obstacles" instance=ExtResource( 3 )]
-position = Vector2( 1039.64, 150.553 )
+position = Vector2( 1099.36, 128.468 )
 
 [node name="Box33" parent="Obstacles" instance=ExtResource( 3 )]
-position = Vector2( 1047.85, 80.4432 )
+position = Vector2( 1092.33, 57.1141 )
 
 [node name="Cannon" parent="Obstacles" instance=ExtResource( 5 )]
 position = Vector2( 1768.16, 397.475 )
@@ -299,6 +300,9 @@ position = Vector2( 406.079, 86.1707 )
 
 [node name="BouncyGravity" parent="Obstacles" instance=ExtResource( 11 )]
 position = Vector2( 391.12, 501.979 )
+
+[node name="CaveHole" parent="Obstacles" instance=ExtResource( 12 )]
+position = Vector2( 303.494, 102.828 )
 
 [node name="PlayerCatcher" parent="." instance=ExtResource( 4 )]
 position = Vector2( -159.208, 0 )
