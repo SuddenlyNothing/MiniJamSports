@@ -1,0 +1,291 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/UI/Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/UI/Menu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Fonts/Glassibox64.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scenes/UI/SceneChange.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Fonts/Glassibox32.tres" type="DynamicFont" id=5]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Credits"
+length = 0.75
+step = 0.75
+tracks/0/type = "value"
+tracks/0/path = NodePath("V:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1024, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("V2:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1024, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Play"
+length = 0.75
+step = 0.75
+tracks/0/type = "value"
+tracks/0/path = NodePath("V:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1024, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("V3:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1024, 0 ), Vector2( 0, 0 ) ]
+}
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="V" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -0.00170898
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="V"]
+margin_left = 417.0
+margin_top = 181.0
+margin_right = 605.0
+margin_bottom = 241.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Title"
+
+[node name="V" type="VBoxContainer" parent="V"]
+margin_top = 291.0
+margin_right = 1023.0
+margin_bottom = 419.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" parent="V/V" groups=[
+"moving_button",
+] instance=ExtResource( 1 )]
+margin_left = 467.0
+margin_right = 555.0
+margin_bottom = 36.0
+text = "Play"
+
+[node name="Credits" parent="V/V" groups=[
+"moving_button",
+] instance=ExtResource( 1 )]
+margin_left = 440.0
+margin_top = 46.0
+margin_right = 582.0
+margin_bottom = 82.0
+text = "Credits"
+
+[node name="Quit" parent="V/V" groups=[
+"moving_button",
+] instance=ExtResource( 1 )]
+margin_left = 467.0
+margin_top = 92.0
+margin_right = 555.0
+margin_bottom = 128.0
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Credits = SubResource( 2 )
+anims/Play = SubResource( 1 )
+
+[node name="V3" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1024.0
+margin_right = 1024.0
+custom_constants/separation = 100
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="H" type="HBoxContainer" parent="V3"]
+margin_top = 78.0
+margin_right = 1023.0
+margin_bottom = 114.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="SceneChange" parent="V3/H" groups=[
+"moving_button",
+] instance=ExtResource( 4 )]
+margin_left = 369.0
+margin_right = 397.0
+margin_bottom = 36.0
+text = "1"
+
+[node name="SceneChange2" parent="V3/H" groups=[
+"moving_button",
+] instance=ExtResource( 4 )]
+margin_left = 497.0
+margin_right = 525.0
+margin_bottom = 36.0
+text = "2"
+
+[node name="SceneChange3" parent="V3/H" groups=[
+"moving_button",
+] instance=ExtResource( 4 )]
+margin_left = 625.0
+margin_right = 653.0
+margin_bottom = 36.0
+text = "3"
+
+[node name="H2" type="HBoxContainer" parent="V3"]
+margin_top = 214.0
+margin_right = 1023.0
+margin_bottom = 250.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="SceneChange" parent="V3/H2" groups=[
+"moving_button",
+] instance=ExtResource( 4 )]
+margin_left = 369.0
+margin_right = 397.0
+margin_bottom = 36.0
+text = "4"
+
+[node name="SceneChange2" parent="V3/H2" groups=[
+"moving_button",
+] instance=ExtResource( 4 )]
+margin_left = 497.0
+margin_right = 525.0
+margin_bottom = 36.0
+text = "5"
+
+[node name="SceneChange3" parent="V3/H2" groups=[
+"moving_button",
+] instance=ExtResource( 4 )]
+margin_left = 625.0
+margin_right = 653.0
+margin_bottom = 36.0
+text = "6"
+
+[node name="H3" type="HBoxContainer" parent="V3"]
+margin_top = 350.0
+margin_right = 1023.0
+margin_bottom = 386.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="SceneChange" parent="V3/H3" groups=[
+"moving_button",
+] instance=ExtResource( 4 )]
+margin_left = 369.0
+margin_right = 397.0
+margin_bottom = 36.0
+text = "7"
+
+[node name="SceneChange2" parent="V3/H3" groups=[
+"moving_button",
+] instance=ExtResource( 4 )]
+margin_left = 497.0
+margin_right = 525.0
+margin_bottom = 36.0
+text = "8"
+
+[node name="SceneChange3" parent="V3/H3" groups=[
+"moving_button",
+] instance=ExtResource( 4 )]
+margin_left = 625.0
+margin_right = 653.0
+margin_bottom = 36.0
+text = "9"
+
+[node name="Back" parent="V3" groups=[
+"moving_button",
+] instance=ExtResource( 1 )]
+margin_left = 467.0
+margin_top = 486.0
+margin_right = 555.0
+margin_bottom = 522.0
+text = "Back"
+
+[node name="V2" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1024.0
+margin_right = -1024.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="V2"]
+margin_top = 182.0
+margin_right = 1024.0
+margin_bottom = 377.0
+custom_fonts/font = ExtResource( 5 )
+text = "Credits
+Credits
+Credits
+Credits
+Credits
+Credits"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CreditsBack" parent="V2" groups=[
+"moving_button",
+] instance=ExtResource( 1 )]
+margin_left = 468.0
+margin_top = 381.0
+margin_right = 556.0
+margin_bottom = 417.0
+text = "Back"
+
+[connection signal="pressed" from="V/V/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="V/V/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="V/V/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]
+[connection signal="pressed" from="V3/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="V2/CreditsBack" to="." method="_on_CreditsBack_pressed"]
