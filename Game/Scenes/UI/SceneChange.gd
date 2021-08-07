@@ -1,4 +1,4 @@
-extends Button
+extends ButtonDefault
 
 export(String, FILE, "*.tscn") var next_scene
 
