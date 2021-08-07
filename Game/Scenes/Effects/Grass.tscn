@@ -1,0 +1,158 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Grass0.png" type="Texture" id=2]
+
+[sub_resource type="VisualShaderNodeTexture" id=1]
+output_port_for_preview = 0
+texture = ExtResource( 2 )
+
+[sub_resource type="VisualShaderNodeExpression" id=3]
+size = Vector2( 739.346, 542.693 )
+expression = "uvOut.xy = uvIn.xy;
+float offset = cos(uvOut.y*6.0 + time);
+offset += cos(uvOut.y*7.0 + uvOut.x*1.0 + time * 2.0);
+offset *= 0.01;
+uvOut.x += offset;"
+
+[sub_resource type="VisualShaderNodeInput" id=4]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeExpression" id=7]
+size = Vector2( 1117.76, 756.816 )
+expression = "float g = (grass0.r + grass1.r) * 0.5;
+colorOut = vec3(0.2,0.8,0.3) * mix( 0.8, 1.0,  g) * 0.9;
+"
+
+[sub_resource type="VisualShaderNodeInput" id=8]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeTexture" id=9]
+output_port_for_preview = 0
+texture = ExtResource( 2 )
+
+[sub_resource type="VisualShaderNodeExpression" id=10]
+size = Vector2( 739.346, 542.693 )
+expression = "uvOut.xy = uvIn.xy;
+uvOut.x += cos(uvOut.y*3.0 + time*0.5) * 0.01;
+uvOut.xy *= 0.8;
+"
+
+[sub_resource type="VisualShader" id=5]
+code = "shader_type canvas_item;
+uniform sampler2D tex_frg_2;
+uniform sampler2D tex_frg_8;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Input:5
+	vec3 n_out5p0 = vec3(UV, 0.0);
+
+// Input:7
+	float n_out7p0 = TIME;
+
+// Expression:4
+	vec3 n_out4p0;
+	n_out4p0 = vec3(0.0, 0.0, 0.0);
+	{
+		n_out4p0.xy = n_out5p0.xy;
+		float offset = cos(n_out4p0.y*6.0 + n_out7p0);
+		offset += cos(n_out4p0.y*7.0 + n_out4p0.x*1.0 + n_out7p0 * 2.0);
+		offset *= 0.01;
+		n_out4p0.x += offset;
+	}
+
+// Texture:2
+	vec4 tex_frg_2_read = texture(tex_frg_2, n_out4p0.xy);
+	vec3 n_out2p0 = tex_frg_2_read.rgb;
+	float n_out2p1 = tex_frg_2_read.a;
+
+// Expression:9
+	vec3 n_out9p0;
+	n_out9p0 = vec3(0.0, 0.0, 0.0);
+	{
+		n_out9p0.xy = n_out5p0.xy;
+		n_out9p0.x += cos(n_out9p0.y*3.0 + n_out7p0*0.5) * 0.01;
+		n_out9p0.xy *= 0.8;
+		
+	}
+
+// Texture:8
+	vec4 tex_frg_8_read = texture(tex_frg_8, n_out9p0.xy);
+	vec3 n_out8p0 = tex_frg_8_read.rgb;
+	float n_out8p1 = tex_frg_8_read.a;
+
+// Expression:6
+	vec3 n_out6p0;
+	n_out6p0 = vec3(0.0, 0.0, 0.0);
+	{
+		float g = (n_out2p0.r + n_out8p0.r) * 0.5;
+		n_out6p0 = vec3(0.2,0.8,0.3) * mix( 0.8, 1.0,  g) * 0.9;
+		
+	}
+
+// Output:0
+	COLOR.rgb = n_out6p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -707.908, -14.7703 )
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2( 1120, 40 )
+nodes/fragment/2/node = SubResource( 1 )
+nodes/fragment/2/position = Vector2( -460, -100 )
+nodes/fragment/4/node = SubResource( 3 )
+nodes/fragment/4/position = Vector2( -1520, -120 )
+nodes/fragment/4/size = Vector2( 739.346, 542.693 )
+nodes/fragment/4/input_ports = "0,1,uvIn;1,0,time;"
+nodes/fragment/4/output_ports = "0,1,uvOut;"
+nodes/fragment/4/expression = "uvOut.xy = uvIn.xy;
+float offset = cos(uvOut.y*6.0 + time);
+offset += cos(uvOut.y*7.0 + uvOut.x*1.0 + time * 2.0);
+offset *= 0.01;
+uvOut.x += offset;"
+nodes/fragment/5/node = SubResource( 4 )
+nodes/fragment/5/position = Vector2( -2060, -80 )
+nodes/fragment/6/node = SubResource( 7 )
+nodes/fragment/6/position = Vector2( -80, -120 )
+nodes/fragment/6/size = Vector2( 1117.76, 756.816 )
+nodes/fragment/6/input_ports = "0,1,grass0;1,1,grass1;"
+nodes/fragment/6/output_ports = "0,1,colorOut;"
+nodes/fragment/6/expression = "float g = (grass0.r + grass1.r) * 0.5;
+colorOut = vec3(0.2,0.8,0.3) * mix( 0.8, 1.0,  g) * 0.9;
+"
+nodes/fragment/7/node = SubResource( 8 )
+nodes/fragment/7/position = Vector2( -2040, 140 )
+nodes/fragment/8/node = SubResource( 9 )
+nodes/fragment/8/position = Vector2( -480, 700 )
+nodes/fragment/9/node = SubResource( 10 )
+nodes/fragment/9/position = Vector2( -1560, 480 )
+nodes/fragment/9/size = Vector2( 739.346, 542.693 )
+nodes/fragment/9/input_ports = "0,1,uvIn;1,0,time;"
+nodes/fragment/9/output_ports = "0,1,uvOut;"
+nodes/fragment/9/expression = "uvOut.xy = uvIn.xy;
+uvOut.x += cos(uvOut.y*3.0 + time*0.5) * 0.01;
+uvOut.xy *= 0.8;
+"
+nodes/fragment/connections = PoolIntArray( 4, 0, 2, 0, 5, 0, 4, 0, 6, 0, 0, 0, 2, 0, 6, 0, 7, 0, 4, 1, 7, 0, 9, 1, 5, 0, 9, 0, 9, 0, 8, 0, 8, 0, 6, 1 )
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 5 )
+
+[node name="VisShaderTest" type="Sprite"]
+material = SubResource( 11 )
+position = Vector2( 630.205, 238.322 )
+z_index = -2
+texture = ExtResource( 1 )
