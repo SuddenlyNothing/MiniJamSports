@@ -12,12 +12,10 @@ z_index = -1
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.392157 )
 scale = Vector2( 7.38925, 7.06017 )
 texture = ExtResource( 1 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.392157 )
 scale = Vector2( 6.32795, 6.6856 )
 texture = ExtResource( 3 )
 
