@@ -52,10 +52,12 @@ radius = 32.0
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
 frames = SubResource( 9 )
 animation = "explode"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 1.75, 1.75 )
 shape = SubResource( 10 )
 
 [node name="ActiveTimer" type="Timer" parent="."]
