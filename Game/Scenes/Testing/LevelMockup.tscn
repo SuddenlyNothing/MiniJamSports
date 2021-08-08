@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Testing/LevelMockup.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Characters/Ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Obstacles/Box.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Characters/PlayerCatcher.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Obstacles/DeathFog.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Obstacles/Cannon.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Obstacles/WallRotate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Obstacles/WallRotating.tscn" type="PackedScene" id=7]
@@ -12,6 +12,12 @@
 [ext_resource path="res://Scenes/Obstacles/Bounce.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Obstacles/BouncyGravity.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Obstacles/CaveHole.tscn" type="PackedScene" id=12]
+
+[sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 530.608, -177.813, 0, 0, 0, 0, 1322.61, -55.9659, 0, 0, 0, 0, 2431.99, 65.8813, 0, 0, 0, 0, 3418.1, 99.8851, 0, 0, 0, 0, 4691.83, 159.392, 0, 0, 0, 0, 5688.28, 160.846, 0, 0, 0, 0, 6143.01, 186.345 )
+}
 
 [node name="LevelMockup" type="Node2D"]
 script = ExtResource( 1 )
@@ -304,10 +310,6 @@ position = Vector2( 391.12, 501.979 )
 [node name="CaveHole" parent="Obstacles" instance=ExtResource( 12 )]
 position = Vector2( 303.494, 102.828 )
 
-[node name="PlayerCatcher" parent="." instance=ExtResource( 4 )]
-position = Vector2( -159.208, 0 )
-player_node_path = NodePath("../Ball")
-
 [node name="Label" type="Label" parent="."]
 margin_left = 99.2958
 margin_top = -17.8732
@@ -320,5 +322,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="DeathFog" parent="." instance=ExtResource( 4 )]
+position = Vector2( -633.286, 166.108 )
+curve = SubResource( 1 )
+
 [connection signal="started" from="Ball" to="." method="_on_Ball_started"]
-[connection signal="caught_player" from="PlayerCatcher" to="." method="_on_PlayerCatcher_caught_player"]
+[connection signal="caught_player" from="DeathFog" to="." method="_on_DeathFog_caught_player"]

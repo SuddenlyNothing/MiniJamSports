@@ -5,8 +5,6 @@ onready var fade := $CanvasLayer/Fade
 var current_scene : Node
 var previous_scene : String
 
-signal dialog_finished
-
 func _ready() -> void:
 	var root = get_tree().get_root()
 	current_scene = root.get_child( root.get_child_count() -1 )

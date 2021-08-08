@@ -1,10 +1,12 @@
 extends Node2D
 
-onready var player_catcher := $PlayerCatcher
+onready var death_fog := $DeathFog
 
-func _on_PlayerCatcher_caught_player():
+func _on_DeathFog_caught_player():
 	Global.restart_scene()
 
 
 func _on_Ball_started():
-	player_catcher.started = true
+	death_fog.started = true
+
+
