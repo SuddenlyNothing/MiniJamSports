@@ -7,6 +7,7 @@ signal caught_player
 onready var screen := get_viewport_rect().size
 
 export(NodePath) var player_node_path
+export(float) var move_speed = 200.0
 var player
 
 var started := false
@@ -19,7 +20,7 @@ func _physics_process(delta : float) -> void:
 		player = get_node_or_null(player_node_path)
 		return
 	var dir = position.direction_to(player.position)
-	var speed := MOVE_SPEED
+	var speed = move_speed
 	if position.x + size.x < player.position.x - screen.x / 2 \
 		or position.x - size.x > player.position.x + screen.x / 2 \
 		or position.y + size.y < player.position.y - screen.y / 2 \
