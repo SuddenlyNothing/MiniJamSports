@@ -12,7 +12,6 @@
 [ext_resource path="res://Assets/BG/GrassEdge0.tscn" type="PackedScene" id=10]
 
 [node name="TestScene" type="Node2D"]
-position = Vector2( -13.8435, -47.1937 )
 
 [node name="Ball" parent="." instance=ExtResource( 7 )]
 position = Vector2( 192.433, 318.028 )
@@ -24,7 +23,7 @@ current = true
 position = Vector2( 1821.26, 254.887 )
 
 [node name="Cannon2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1821.26, 133.624 )
+position = Vector2( 1937.55, -62.6126 )
 facing = 1
 
 [node name="Boxes" type="Node2D" parent="."]
@@ -154,7 +153,7 @@ z_index = -20
 texture = ExtResource( 3 )
 
 [node name="DirtBase2" type="Sprite" parent="BG/Base"]
-position = Vector2( 1403.57, 176.671 )
+position = Vector2( 1405.39, 176.671 )
 scale = Vector2( 7.77392, 3.09924 )
 z_index = -20
 texture = ExtResource( 3 )
