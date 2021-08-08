@@ -13,7 +13,7 @@
 script = ExtResource( 2 )
 
 [node name="Ball" parent="." instance=ExtResource( 9 )]
-position = Vector2( 416.582, 200.663 )
+position = Vector2( 370.655, 262.389 )
 
 [node name="Camera2D" type="Camera2D" parent="Ball"]
 current = true
@@ -27,63 +27,47 @@ position = Vector2( 1858.95, 1295.88 )
 position = Vector2( 1020.98, 324.283 )
 
 [node name="Bounce2" parent="Obstacles" instance=ExtResource( 1 )]
-position = Vector2( 1254.5, 68.7829 )
+position = Vector2( 1215.39, 69.7605 )
 
 [node name="Bounce3" parent="Obstacles" instance=ExtResource( 1 )]
-position = Vector2( 1572.51, 325.457 )
+position = Vector2( 1512.87, 301.016 )
 
 [node name="Bounce4" parent="Obstacles" instance=ExtResource( 1 )]
-position = Vector2( 1881.13, 65.2625 )
+position = Vector2( 1559.48, 538.445 )
 
 [node name="BouncyGravity" parent="Obstacles" instance=ExtResource( 11 )]
 position = Vector2( 1193.49, 1375.44 )
 
 [node name="PlayerCatcher" parent="." instance=ExtResource( 8 )]
-position = Vector2( 174.058, 195.97 )
+position = Vector2( 128.131, 257.696 )
 player_node_path = NodePath("../Ball")
 move_speed = 100.0
 
 [node name="Box" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1286.38, 276.236 )
+position = Vector2( 950.069, 63.1085 )
 rotation = -0.0655997
 
 [node name="Box4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1206.63, 256.675 )
-rotation = -2.20487
+position = Vector2( 1222.27, 217.569 )
+rotation = -1.54333
 
 [node name="Box8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1827.31, 173.166 )
+position = Vector2( 1881.08, 271.909 )
 rotation = -0.339538
 
-[node name="Box9" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1735.53, 172.413 )
-rotation = -2.47881
-
 [node name="Box2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1460.34, 259.701 )
-rotation = -0.0581931
+position = Vector2( 1674.44, 516.823 )
+rotation = -0.346871
 
 [node name="Box3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1368.66, 269.347 )
-rotation = 0.3003
-
-[node name="Box5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1596.34, 120.502 )
-rotation = -0.0655997
-
-[node name="Box6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1779.34, 103.966 )
-rotation = -0.0581931
-
-[node name="Box7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1678.62, 113.612 )
+position = Vector2( 1018.66, 128.565 )
 rotation = 0.3003
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( -131072, 2, 0, -131071, 2, 0, -131070, 2, 0, -131069, 2, 0, -131068, 2, 0, -131067, 2, 0, -131066, 2, 0, -131065, 2, 0, -131064, 2, 0, -131063, 2, 0, -1, 2, 0, -65536, 7, 0, -65526, 2, 0, -65525, 2, 0, -65524, 2, 0, -65523, 2, 0, -65522, 2, 0, -65521, 2, 0, 65535, 2, 0, 13, 8, 0, 15, 2, 0, 16, 2, 0, 17, 2, 0, 18, 2, 0, 19, 2, 0, 20, 2, 0, 21, 2, 0, 22, 2, 0, 23, 2, 0, 24, 2, 0, 25, 2, 0, 26, 2, 0, 27, 2, 0, 28, 2, 0, 29, 2, 0, 30, 2, 0, 31, 2, 0, 131071, 2, 0, 65551, 2, 0, 65552, 2, 0, 65553, 2, 0, 196607, 2, 0, 262143, 2, 0, 196618, 1, 0, 196620, 6, 0, 327679, 2, 0, 393215, 2, 0, 327690, 0, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 327695, 2, 0, 327696, 2, 0, 327697, 2, 0, 327698, 2, 0, 327699, 2, 0, 327700, 2, 0, 327701, 2, 0, 327702, 2, 0, 327703, 2, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0, 327710, 2, 0, 327711, 2, 0, 327712, 2, 0, 458751, 2, 0, 393216, 6, 0, 393224, 1, 0, 393228, 2, 0, 524287, 2, 0, 458762, 2, 0, 458763, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0 )
+tile_data = PoolIntArray( -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, -65524, 2, 0, -65523, 2, 0, -65522, 2, 0, -65521, 2, 0, -65520, 2, 0, -65519, 2, 0, 5, 7, 0, 15, 8, 0, 17, 7, 0, 19, 8, 0, 21, 0, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 196607, 2, 0, 131072, 7, 0, 131082, 1, 0, 131084, 6, 0, 131093, 8, 0, 131095, 0, 0, 262143, 2, 0, 327679, 2, 0, 262144, 6, 0, 262152, 1, 0, 262154, 2, 0, 262155, 2, 0, 262156, 2, 0, 262157, 2, 0, 262158, 6, 0, 262160, 1, 0, 262162, 0, 0, 262164, 6, 0, 262167, 8, 0, 262169, 7, 0, 393215, 2, 0, 327690, 0, 0, 327692, 2, 0, 327693, 2, 0, 327707, 1, 0, 458751, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393228, 2, 0, 393229, 2, 0, 393230, 2, 0, 393231, 2, 0, 393232, 2, 0, 393233, 2, 0, 393238, 6, 0, 458779, 2, 0, 524310, 0, 0, 524315, 2, 0, 589848, 0, 0, 589850, 2, 0, 589851, 2, 0 )
 
 [connection signal="started" from="Ball" to="." method="_on_Ball_started"]
 [connection signal="caught_player" from="PlayerCatcher" to="." method="_on_PlayerCatcher_caught_player"]
