@@ -5,6 +5,7 @@ signal caught_player
 const FOG_SPEED := 100.0
 
 onready var path_follow := $PathFollow2D
+onready var particles := $PathFollow2D/Particles2D
 onready var line := $Node/Line2D
 onready var line_timer := $LineTimer
 
@@ -12,6 +13,7 @@ var started := false setget set_started
 
 func set_started(val : bool) -> void:
 	started = val
+	particles.emitting = true
 	line_timer.start()
 
 func _physics_process(delta : float) -> void:

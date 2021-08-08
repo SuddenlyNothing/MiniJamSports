@@ -28,7 +28,7 @@ _global_script_class_icons={
 
 config/name="MiniGolf"
 run/main_scene="res://Scenes/UI/Menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/Obstacles/Box.png"
 
 [autoload]
 

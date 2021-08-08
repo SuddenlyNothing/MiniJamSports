@@ -18,9 +18,11 @@ gradient = SubResource( 3 )
 
 [sub_resource type="ParticlesMaterial" id=2]
 emission_shape = 2
-emission_box_extents = Vector3( 1, 300, 1 )
+emission_box_extents = Vector3( 1, 600, 1 )
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
+angular_velocity = 5.0
+angular_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 angle = 180.0
@@ -29,20 +31,24 @@ scale = 0.2
 color_ramp = SubResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 50, 300 )
+extents = Vector2( 50, 600 )
 
 [node name="DeathFog" type="Path2D"]
 curve = SubResource( 7 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 loop = false
 
 [node name="Particles2D" type="Particles2D" parent="PathFollow2D"]
 position = Vector2( 50, 0 )
-amount = 100
+emitting = false
+amount = 200
 randomness = 1.0
-visibility_rect = Rect2( -100, -400, 200, 800 )
+visibility_rect = Rect2( -500, -2000, 1000, 4000 )
 local_coords = false
 process_material = SubResource( 2 )
 texture = ExtResource( 3 )

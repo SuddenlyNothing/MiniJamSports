@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Characters/Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Obstacles/Bounce.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Testing/TestScene.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/Obstacles/Boost.tscn" type="PackedScene" id=10]
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource( 9 )
@@ -13,35 +13,5 @@ position = Vector2( 442, 200.977 )
 [node name="Camera2D" type="Camera2D" parent="Ball"]
 current = true
 
-[node name="Boost" parent="." instance=ExtResource( 10 )]
-position = Vector2( 813.403, 220.044 )
-
-[node name="Boost2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1232.69, 217.99 )
-
-[node name="Boost7" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1043.77, 224.151 )
-
-[node name="Boost8" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1479.11, 213.883 )
-
-[node name="Boost9" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1898.02, 217.99 )
-
-[node name="Boost10" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2360.06, 220.044 )
-
-[node name="Boost11" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2768.7, 220.044 )
-
-[node name="Boost3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1666.26, 217.009 )
-
-[node name="Boost4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2128.94, 225.706 )
-
-[node name="Boost5" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2563.78, 218.748 )
-
-[node name="Boost6" parent="." instance=ExtResource( 10 )]
-position = Vector2( 3004.66, 218.748 )
+[node name="Bounce" parent="." instance=ExtResource( 2 )]
+position = Vector2( 591.405, 538.014 )
