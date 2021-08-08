@@ -1,17 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Characters/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Obstacles/Bounce.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Obstacles/DeathFog.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Testing/TestScene.gd" type="Script" id=9]
+
+[sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -253.364, 243.541, -156.084, -238.544, 156.084, 238.544, 1129.8, 263.174, 0, 0, 0, 0, 1145.5, 703.94 )
+}
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource( 9 )
+
+[node name="Bounce" parent="." instance=ExtResource( 2 )]
+position = Vector2( 591.405, 538.014 )
+
+[node name="DeathFog" parent="." instance=ExtResource( 3 )]
+curve = SubResource( 1 )
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 position = Vector2( 442, 200.977 )
 
 [node name="Camera2D" type="Camera2D" parent="Ball"]
 current = true
+zoom = Vector2( 4, 4 )
 
-[node name="Bounce" parent="." instance=ExtResource( 2 )]
-position = Vector2( 591.405, 538.014 )
+[connection signal="started" from="Ball" to="." method="_on_Ball_started"]
