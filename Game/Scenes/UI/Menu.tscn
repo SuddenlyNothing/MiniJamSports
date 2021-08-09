@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/UI/Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/Menu.gd" type="Script" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Assets/BG/RockTileSet.tres" type="TileSet" id=6]
 [ext_resource path="res://Assets/BG/DirtBase.tres" type="Texture" id=7]
 [ext_resource path="res://Assets/BG/GrassEdge0.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Music/Main Game and title.mp3" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Credits"
@@ -360,11 +359,6 @@ margin_top = 332.0
 margin_right = 556.0
 margin_bottom = 368.0
 text = "Back"
-
-[node name="Game Music" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 10 )
-bus = "Music"
 
 [connection signal="pressed" from="V/V/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="V/V/Credits" to="." method="_on_Credits_pressed"]
