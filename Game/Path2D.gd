@@ -2,7 +2,7 @@ extends Path2D
 
 signal caught_player
 
-const FOG_SPEED := 100.0
+export(float) var fog_speed = 100.0
 
 onready var path_follow := $PathFollow2D
 onready var particles := $PathFollow2D/Particles2D
@@ -19,7 +19,7 @@ func set_started(val : bool) -> void:
 func _physics_process(delta : float) -> void:
 	if not started:
 		return
-	path_follow.offset += FOG_SPEED * delta
+	path_follow.offset += fog_speed * delta
 
 
 func _on_Area2D_body_entered(body):
