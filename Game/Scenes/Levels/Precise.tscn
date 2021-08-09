@@ -67,15 +67,19 @@ angular_velocity = -5
 
 [node name="Boost" parent="Obstacles/Start" index="2" instance=ExtResource( 3 )]
 position = Vector2( 1472, 256 )
+z_index = -1
 
 [node name="Boost2" parent="Obstacles/Start" index="3" instance=ExtResource( 3 )]
 position = Vector2( 1600, 256 )
+z_index = -1
 
 [node name="Boost3" parent="Obstacles/Start" index="4" instance=ExtResource( 3 )]
 position = Vector2( 1728, 256 )
+z_index = -1
 
 [node name="Boost4" parent="Obstacles/Start" index="5" instance=ExtResource( 3 )]
 position = Vector2( 1856, 256 )
+z_index = -1
 
 [node name="Tunnel" type="Node2D" parent="Obstacles" index="2"]
 
