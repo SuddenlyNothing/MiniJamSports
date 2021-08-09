@@ -35,4 +35,3 @@ func _on_Credits_pressed():
 	anim_player.play("Credits")
 func _ready():
 	$"Game Music".play(0)
-	$"Game Music".play(2)
