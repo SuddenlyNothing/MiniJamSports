@@ -52,6 +52,7 @@ position = Vector2( 544.724, 151.538 )
 
 [node name="GravityWell" parent="Obstacles/Bounce" index="4" instance=ExtResource( 3 )]
 position = Vector2( -0.942749, 2.82843 )
+z_index = -4
 gravity = 20.0
 
 [node name="Bounce2" parent="Obstacles" index="4" instance=ExtResource( 2 )]
@@ -59,6 +60,7 @@ position = Vector2( 794.798, -211.544 )
 
 [node name="GravityWell" parent="Obstacles/Bounce2" index="4" instance=ExtResource( 3 )]
 position = Vector2( -0.942749, 2.82843 )
+z_index = -4
 gravity = 20.0
 
 [node name="Bounce3" parent="Obstacles" index="5" instance=ExtResource( 2 )]
@@ -66,6 +68,7 @@ position = Vector2( 1053.86, 148.888 )
 
 [node name="GravityWell" parent="Obstacles/Bounce3" index="4" instance=ExtResource( 3 )]
 position = Vector2( -0.942749, 2.82843 )
+z_index = -4
 gravity = 20.0
 
 [node name="Bounce4" parent="Obstacles" index="6" instance=ExtResource( 2 )]
@@ -73,6 +76,7 @@ position = Vector2( 1310.79, -210.092 )
 
 [node name="GravityWell" parent="Obstacles/Bounce4" index="4" instance=ExtResource( 3 )]
 position = Vector2( -0.942749, 2.82843 )
+z_index = -4
 gravity = 10.0
 
 [node name="BG" type="Node2D" parent="." index="5"]

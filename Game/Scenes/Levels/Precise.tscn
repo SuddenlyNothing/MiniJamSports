@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Levels/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Obstacles/WallRotating.tscn" type="PackedScene" id=2]
@@ -7,7 +7,9 @@
 [ext_resource path="res://Scenes/Obstacles/Bounce.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Obstacles/ExplosionActivator.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Obstacles/Box.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Obstacles/CaveHole.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/BG/DirtBase.tres" type="Texture" id=8]
+[ext_resource path="res://Assets/BG/DirtRocks0.tres" type="Texture" id=9]
+[ext_resource path="res://Assets/BG/GrassEdge0.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
@@ -20,17 +22,17 @@ _data = {
 [node name="TileMap" parent="." index="0"]
 z_index = 0
 z_as_relative = false
-tile_data = PoolIntArray( -262132, 1073741826, 0, -262131, 1073741826, 0, -262130, 1073741826, 0, -262129, 1073741826, 0, -262128, 1073741826, 0, -196599, 536870914, 0, -196598, 536870914, 0, -196597, 536870914, 0, -196596, -536870903, 0, -196592, 1073741825, 0, -131064, 1073741826, 0, -131063, -536870903, 0, -131037, 1610612738, 0, -131036, 1610612738, 0, -131035, 1610612738, 0, -131034, 1610612738, 0, -65528, 1073741826, 0, -65527, 536870921, 0, -65518, 1073741825, 0, -65502, 1610612737, 0, -65498, -1073741823, 0, -65486, 1610612738, 0, -65485, 1610612738, 0, -65484, 1610612738, 0, -65483, 1610612738, 0, -65482, 1610612738, 0, -65481, 1610612738, 0, -65480, 1610612738, 0, -65479, 1610612738, 0, -65478, 1610612738, 0, -65477, 1610612738, 0, -65472, 1610612738, 0, -65471, 1610612738, 0, -65470, 1610612738, 0, -65469, 1610612738, 0, -65468, 1610612738, 0, -65467, 1610612738, 0, -65466, 1610612738, 0, 9, 536870914, 0, 10, 536870914, 0, 11, 536870914, 0, 12, 536870921, 0, 20, 1073741826, 0, 21, 1073741826, 0, 22, 1073741826, 0, 23, 1073741826, 0, 41, -1073741824, 0, 48, 1610612737, 0, 59, -1073741823, 0, 62, 1610612737, 0, 70, -1073741823, 0, 72, -1073741822, 0, 73, -1073741822, 0, 74, -1073741822, 0, 75, -1073741822, 0, 76, -1073741822, 0, 77, -1073741822, 0, 78, -1073741822, 0, 79, -1073741822, 0, 65549, 1610612738, 0, 65550, 536870914, 0, 65551, 536870914, 0, 65552, 536870914, 0, 65553, 536870913, 0, 65559, 1073741833, 0, 65560, 1073741826, 0, 65568, 1610612737, 0, 65576, -1073741815, 0, 65579, -1610612734, 0, 65580, -1610612734, 0, 65581, -1610612734, 0, 65582, -1610612734, 0, 65583, -1610612734, 0, 65597, 1610612738, 0, 65608, 1610612745, 0, 65616, -1073741823, 0, 131096, 1073741826, 0, 131097, 2, 0, 131098, 2, 0, 131099, 2, 0, 131100, 2, 0, 131101, 2, 0, 131102, -1610612734, 0, 131103, -1610612734, 0, 131114, -1073741815, 0, 131115, 1610612745, 0, 131154, 1610612738, 0, 131155, 1610612738, 0, 131156, 1610612738, 0, 196626, 1073741826, 0, 196692, 1610612738, 0, 262162, 1073741826, 0, 262163, 536870921, 0, 262228, 1610612738, 0, 327699, 536870914, 0, 327700, 536870914, 0, 327701, 536870914, 0, 327702, 2, 0, 327703, 2, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0, 327710, -1610612734, 0, 327711, -1610612734, 0, 327712, -1610612735, 0, 327722, 9, 0, 327723, -1610612727, 0, 327760, 1, 0, 327762, 1610612738, 0, 327763, 1610612738, 0, 327764, 1610612738, 0, 393256, 9, 0, 393257, -1073741824, 0, 393259, -1610612734, 0, 393260, -1610612734, 0, 393261, -1610612734, 0, 393262, -1610612734, 0, 393263, -1610612734, 0, 393264, -1610612735, 0, 393275, 1, 0, 393277, 1610612738, 0, 393278, -1610612735, 0, 393286, 1, 0, 393288, -1610612727, 0, 458786, -1610612735, 0, 458790, 1, 0, 458824, -1073741822, 0, 458825, -1073741822, 0, 458826, -1073741822, 0, 458827, -1073741822, 0, 458828, -1073741822, 0, 458829, -1073741822, 0, 458830, -1073741822, 0, 458831, -1073741822, 0, 458832, -1073741822, 0, 524337, 1610612738, 0, 524338, -1610612734, 0, 524339, -1610612734, 0, 524340, -1610612734, 0, 524341, -1610612734, 0, 524342, -1610612734, 0, 524343, -1610612734, 0, 524344, -1610612734, 0, 524345, 1610612738, 0, 524346, 1610612738, 0, 524347, 1610612738, 0, 524352, 1610612738, 0, 524353, 1610612738, 0, 524354, 1610612738, 0, 524355, 1610612738, 0, 524356, 1610612738, 0, 524357, 1610612738, 0, 524358, 1610612738, 0, 589859, 1610612738, 0, 589860, 1610612738, 0, 589861, 1610612738, 0, 589862, 1610612738, 0 )
-
-[node name="CaveHole" parent="TileMap" index="0" instance=ExtResource( 8 )]
-position = Vector2( 5312, 256 )
+tile_data = PoolIntArray( -458670, 0, 0, -458668, 0, 0, -458666, 0, 0, -393206, 1610612736, 0, -327667, 1610612736, 0, -327663, -1073741819, 0, -327598, 0, 0, -327596, 0, 0, -327594, 0, 0, -327592, 0, 0, -262135, -1610612731, 0, -262133, 1610612741, 0, -262129, 1610612741, 0, -262090, 1610612741, 0, -262063, -1610612731, 0, -196601, -1610612736, 0, -196598, 5, 0, -196596, -536870903, 0, -196592, 1073741825, 0, -196555, -1073741819, 0, -196554, -1073741822, 0, -196553, 1610612736, 0, -196550, 1610612736, 0, -196548, -1610612731, 0, -196542, -1073741819, 0, -196537, -1073741824, 0, -196534, -1610612736, 0, -196528, -1610612734, 0, -196526, 0, 0, -196524, 0, 0, -196522, 0, 0, -196520, 0, 0, -196518, 1610612736, 0, -131063, -536870903, 0, -131053, 1610612741, 0, -131042, 1610612738, 0, -131040, 0, 0, -131037, 1610612738, 0, -131036, 1610612738, 0, -131035, 1610612738, 0, -131034, 1610612738, 0, -131032, -1073741824, 0, -131029, 1610612736, 0, -131023, 5, 0, -131021, 1610612736, 0, -131015, -1073741822, 0, -131011, 0, 0, -131009, -1610612734, 0, -131008, -1610612736, 0, -131005, -1073741824, 0, -131003, -1073741822, 0, -131002, -1073741819, 0, -130999, -1073741819, 0, -130996, -1610612731, 0, -130993, -1610612736, 0, -130991, -1610612734, 0, -65528, -1610612731, 0, -65527, 536870921, 0, -65518, 1073741825, 0, -65515, 1610612736, 0, -65507, 1610612736, 0, -65506, 1610612738, 0, -65502, 1610612737, 0, -65498, -1073741823, 0, -65494, 1610612738, 0, -65491, 1610612738, 0, -65490, -1073741824, 0, -65488, 2, 0, -65487, -1073741822, 0, -65486, 1610612738, 0, -65483, -1073741822, 0, -65482, 1610612741, 0, -65480, -1073741822, 0, -65479, 1610612741, 0, -65477, 1610612738, 0, -65473, -1610612734, 0, -65470, -1073741822, 0, -65467, -1073741822, 0, -65464, -1073741822, 0, -65461, -1610612731, 0, -65459, -1610612736, 0, -65455, -1610612731, 0, -65454, 0, 0, -65452, 0, 0, -65450, 0, 0, -65448, 0, 0, -65446, 1610612736, 0, 9, 5, 0, 11, 536870914, 0, 12, 536870921, 0, 20, 1073741826, 0, 23, 1073741826, 0, 24, -1610612731, 0, 27, 1610612736, 0, 30, 1610612738, 0, 31, 5, 0, 33, 2, 0, 40, -1073741822, 0, 41, -1073741824, 0, 43, -1073741822, 0, 44, -1073741822, 0, 45, -1073741819, 0, 48, 1610612737, 0, 59, -1073741823, 0, 61, 1610612738, 0, 62, 1610612737, 0, 70, -1073741823, 0, 72, -1073741822, 0, 73, 5, 0, 76, -1073741822, 0, 79, -1073741822, 0, 80, -1610612734, 0, 65543, 5, 0, 65546, -1073741819, 0, 65547, 1610612736, 0, 65549, 1610612738, 0, 65550, 536870914, 0, 65551, 1610612736, 0, 65553, 536870913, 0, 65559, 1073741833, 0, 65562, -1073741819, 0, 65566, -1610612731, 0, 65568, 1610612737, 0, 65576, -1073741815, 0, 65579, 1610612741, 0, 65582, -1610612734, 0, 65583, -1073741822, 0, 65597, 1610612738, 0, 65608, 1610612745, 0, 65616, -1073741823, 0, 65618, 5, 0, 65620, 5, 0, 65622, 0, 0, 65624, 0, 0, 65626, 1610612736, 0, 131080, 1610612736, 0, 131096, 5, 0, 131099, 2, 0, 131100, 1610612741, 0, 131103, -1610612734, 0, 131114, -1073741815, 0, 131115, 1610612745, 0, 131154, 1610612738, 0, 131155, 1610612738, 0, 131156, 1610612738, 0, 131157, -1073741819, 0, 196626, 1073741826, 0, 196692, 1610612738, 0, 196694, 0, 0, 196696, 0, 0, 196698, 1610612736, 0, 262162, 1073741826, 0, 262163, 536870921, 0, 262228, 1610612738, 0, 262229, -1073741819, 0, 327699, 1610612736, 0, 327701, 536870914, 0, 327702, 1610612741, 0, 327704, 2, 0, 327705, 1610612736, 0, 327707, 2, 0, 327708, -1610612731, 0, 327709, 2, 0, 327710, 1610612741, 0, 327712, -1610612735, 0, 327722, 9, 0, 327723, -1610612727, 0, 327760, 1, 0, 327762, 1610612738, 0, 327763, 1610612738, 0, 327764, 1610612738, 0, 327766, 0, 0, 327768, 0, 0, 327770, 1610612736, 0, 393238, 1610612736, 0, 393245, 1610612736, 0, 393247, 2, 0, 393256, 9, 0, 393257, -1073741824, 0, 393259, -1610612734, 0, 393260, -1610612734, 0, 393261, 1610612736, 0, 393263, -1610612734, 0, 393264, -1610612735, 0, 393275, 1, 0, 393277, 1610612738, 0, 393278, -1610612735, 0, 393286, 1, 0, 393288, -1610612727, 0, 393298, 5, 0, 393300, 5, 0, 458772, 5, 0, 458776, -1610612731, 0, 458777, -1073741822, 0, 458778, 1610612736, 0, 458783, 1610612738, 0, 458784, 1610612736, 0, 458786, -1610612735, 0, 458790, 1, 0, 458792, -1073741822, 0, 458795, -1073741819, 0, 458796, 1610612738, 0, 458813, -1073741819, 0, 458824, -1610612731, 0, 458825, -1073741822, 0, 458826, 5, 0, 458828, -1073741822, 0, 458829, -1610612731, 0, 458830, -1610612736, 0, 458832, -1073741822, 0, 458833, -1610612734, 0, 458834, 0, 0, 458836, 0, 0, 458838, 0, 0, 458840, 0, 0, 458842, 1610612736, 0, 524318, 1610612738, 0, 524328, -1073741824, 0, 524333, 1610612738, 0, 524335, 1610612738, 0, 524336, 1610612738, 0, 524337, 1610612738, 0, 524338, 1610612736, 0, 524340, 5, 0, 524342, 2, 0, 524343, 1610612736, 0, 524345, 1610612738, 0, 524346, 1610612738, 0, 524347, 1610612738, 0, 524348, 1610612738, 0, 524350, 0, 0, 524352, 1610612741, 0, 524354, 1610612738, 0, 524355, -1610612736, 0, 524357, -1073741822, 0, 524358, -1073741824, 0, 524361, 1610612741, 0, 524363, -1610612731, 0, 524368, -1610612731, 0, 524369, -1610612734, 0, 589857, -1610612734, 0, 589858, -1610612731, 0, 589859, 1610612741, 0, 589861, 0, 0, 589876, 1610612738, 0, 589877, 1610612736, 0, 589881, 1610612736, 0, 589884, 5, 0, 589889, 1610612741, 0, 589893, -1073741819, 0, 589897, 1610612738, 0, 589900, -1610612736, 0, 589903, 1610612738, 0, 589905, -1610612731, 0, 589906, 0, 0, 589908, 0, 0, 589910, 0, 0, 589912, 0, 0, 589914, 1610612736, 0, 655410, 1610612738, 0, 655412, -1610612734, 0, 655421, 0, 0, 655426, -1073741824, 0, 655439, 1610612741, 0, 720950, 1610612741, 0, 720976, 1610612741, 0, 720978, 0, 0, 720980, 0, 0, 720982, 0, 0, 720984, 0, 0, 786513, 1610612738, 0, 852050, 0, 0, 852052, 0, 0, 852054, 0, 0, 852056, 1610612736, 0, 983122, 0, 0, 983124, 0, 0, 983126, 1610612736, 0 )
 
 [node name="Ball" parent="." index="1"]
 position = Vector2( 704, -64 )
 
 [node name="DeathFog" parent="." index="2"]
 curve = SubResource( 1 )
-fog_speed = 160.0
+fog_speed = 170.0
+
+[node name="CaveHole" parent="." index="3"]
+position = Vector2( 5312, 256 )
 
 [node name="Obstacles" type="Node2D" parent="." index="4"]
 z_index = -5
@@ -48,6 +50,7 @@ angular_velocity = -1
 
 [node name="GravityWell" parent="Obstacles/SpinChamber" index="2" instance=ExtResource( 4 )]
 position = Vector2( 2368, 256 )
+z_index = -1
 
 [node name="Bounce" parent="Obstacles/SpinChamber" index="3" instance=ExtResource( 5 )]
 position = Vector2( 2368, 256 )
@@ -260,73 +263,284 @@ position = Vector2( 4352, 256 )
 [node name="Boost12" parent="Obstacles/Conveyer" index="16" instance=ExtResource( 3 )]
 position = Vector2( 4480, 256 )
 
-[node name="Boost6" parent="Obstacles/Conveyer" index="17" instance=ExtResource( 3 )]
+[node name="Boost13" parent="Obstacles/Conveyer" index="17" instance=ExtResource( 3 )]
+position = Vector2( 5184, 256 )
+
+[node name="Boost14" parent="Obstacles/Conveyer" index="18" instance=ExtResource( 3 )]
+position = Vector2( 5056, 256 )
+
+[node name="Boost6" parent="Obstacles/Conveyer" index="19" instance=ExtResource( 3 )]
 position = Vector2( 4224, 128 )
 rotation = 4.71239
 facing = 3
 
-[node name="Boost7" parent="Obstacles/Conveyer" index="18" instance=ExtResource( 3 )]
+[node name="Boost7" parent="Obstacles/Conveyer" index="20" instance=ExtResource( 3 )]
 position = Vector2( 4352, 128 )
 rotation = 4.71239
 facing = 3
 
-[node name="Boost8" parent="Obstacles/Conveyer" index="19" instance=ExtResource( 3 )]
+[node name="Boost8" parent="Obstacles/Conveyer" index="21" instance=ExtResource( 3 )]
 position = Vector2( 4480, 128 )
 rotation = 4.71239
 facing = 3
 
-[node name="ExplosionActivator18" parent="Obstacles/Conveyer" index="20" instance=ExtResource( 6 )]
+[node name="ExplosionActivator18" parent="Obstacles/Conveyer" index="22" instance=ExtResource( 6 )]
 position = Vector2( 4664, 336 )
 rotation = -2.09439
 
-[node name="ExplosionActivator24" parent="Obstacles/Conveyer" index="21" instance=ExtResource( 6 )]
+[node name="ExplosionActivator24" parent="Obstacles/Conveyer" index="23" instance=ExtResource( 6 )]
 position = Vector2( 4832, 176 )
 rotation = -2.09439
 
-[node name="ExplosionActivator20" parent="Obstacles/Conveyer" index="22" instance=ExtResource( 6 )]
+[node name="ExplosionActivator20" parent="Obstacles/Conveyer" index="24" instance=ExtResource( 6 )]
 position = Vector2( 4848, 336 )
 rotation = -3.14159
 
-[node name="ExplosionActivator21" parent="Obstacles/Conveyer" index="23" instance=ExtResource( 6 )]
+[node name="ExplosionActivator21" parent="Obstacles/Conveyer" index="25" instance=ExtResource( 6 )]
 position = Vector2( 4920, 192 )
 rotation = -3.40339
 
-[node name="ExplosionActivator19" parent="Obstacles/Conveyer" index="24" instance=ExtResource( 6 )]
+[node name="ExplosionActivator19" parent="Obstacles/Conveyer" index="26" instance=ExtResource( 6 )]
 position = Vector2( 4736, 184 )
 rotation = -3.40339
 
-[node name="ExplosionActivator29" parent="Obstacles/Conveyer" index="25" instance=ExtResource( 6 )]
+[node name="ExplosionActivator29" parent="Obstacles/Conveyer" index="27" instance=ExtResource( 6 )]
 position = Vector2( 4896, 400 )
 rotation = -2.09439
 
-[node name="ExplosionActivator30" parent="Obstacles/Conveyer" index="26" instance=ExtResource( 6 )]
+[node name="ExplosionActivator30" parent="Obstacles/Conveyer" index="28" instance=ExtResource( 6 )]
 position = Vector2( 4984, 416 )
 rotation = -3.40339
 
-[node name="ExplosionActivator31" parent="Obstacles/Conveyer" index="27" instance=ExtResource( 6 )]
+[node name="ExplosionActivator31" parent="Obstacles/Conveyer" index="29" instance=ExtResource( 6 )]
 position = Vector2( 4800, 408 )
 rotation = -3.40339
 
-[node name="ExplosionActivator22" parent="Obstacles/Conveyer" index="28" instance=ExtResource( 6 )]
+[node name="ExplosionActivator22" parent="Obstacles/Conveyer" index="30" instance=ExtResource( 6 )]
 position = Vector2( 4944, 360 )
 rotation = -3.40339
 
-[node name="ExplosionActivator23" parent="Obstacles/Conveyer" index="29" instance=ExtResource( 6 )]
+[node name="ExplosionActivator23" parent="Obstacles/Conveyer" index="31" instance=ExtResource( 6 )]
 position = Vector2( 4760, 352 )
 rotation = -3.40339
 
-[node name="ExplosionActivator25" parent="Obstacles/Conveyer" index="30" instance=ExtResource( 6 )]
+[node name="ExplosionActivator25" parent="Obstacles/Conveyer" index="32" instance=ExtResource( 6 )]
 position = Vector2( 4784, 120 )
 rotation = -2.09439
 
-[node name="ExplosionActivator26" parent="Obstacles/Conveyer" index="31" instance=ExtResource( 6 )]
+[node name="ExplosionActivator26" parent="Obstacles/Conveyer" index="33" instance=ExtResource( 6 )]
 position = Vector2( 4968, 120 )
 rotation = -3.14159
 
-[node name="ExplosionActivator27" parent="Obstacles/Conveyer" index="32" instance=ExtResource( 6 )]
+[node name="ExplosionActivator27" parent="Obstacles/Conveyer" index="34" instance=ExtResource( 6 )]
 position = Vector2( 5064, 144 )
 rotation = -3.40339
 
-[node name="ExplosionActivator28" parent="Obstacles/Conveyer" index="33" instance=ExtResource( 6 )]
+[node name="ExplosionActivator28" parent="Obstacles/Conveyer" index="35" instance=ExtResource( 6 )]
 position = Vector2( 4880, 136 )
 rotation = -3.40339
+
+[node name="BG" type="Node2D" parent="." index="5"]
+z_index = -50
+
+[node name="Dirt" type="Node2D" parent="BG" index="0"]
+
+[node name="DirtBase" type="Sprite" parent="BG/Dirt" index="0"]
+position = Vector2( 824, -64 )
+scale = Vector2( 4, 2 )
+texture = ExtResource( 8 )
+
+[node name="DirtBase2" type="Sprite" parent="BG/Dirt" index="1"]
+position = Vector2( 2300, 256 )
+scale = Vector2( 11.9375, 2 )
+texture = ExtResource( 8 )
+
+[node name="DirtBase6" type="Sprite" parent="BG/Dirt" index="2"]
+position = Vector2( 4310, 256 )
+scale = Vector2( 19.4063, 4 )
+texture = ExtResource( 8 )
+
+[node name="DirtBase5" type="Sprite" parent="BG/Dirt" index="3"]
+position = Vector2( 2336, 252 )
+scale = Vector2( 4.5, 5.0625 )
+texture = ExtResource( 8 )
+
+[node name="DirtBase4" type="Sprite" parent="BG/Dirt" index="4"]
+position = Vector2( 1408, 176 )
+scale = Vector2( 3, 2.25 )
+texture = ExtResource( 8 )
+
+[node name="DirtBase3" type="Sprite" parent="BG/Dirt" index="5"]
+position = Vector2( 1188.92, 83.0815 )
+rotation = 0.785397
+scale = Vector2( 4, 1.2248 )
+texture = ExtResource( 8 )
+
+[node name="DirtRocks0" type="Sprite" parent="BG/Dirt" index="6"]
+position = Vector2( 3008, 256 )
+rotation = -0.785397
+texture = ExtResource( 9 )
+
+[node name="DirtRocks1" type="Sprite" parent="BG/Dirt" index="7"]
+position = Vector2( 3728, 352 )
+rotation = 0.261799
+texture = ExtResource( 9 )
+
+[node name="DirtRocks2" type="Sprite" parent="BG/Dirt" index="8"]
+position = Vector2( 3408, 272 )
+rotation = 0.261799
+texture = ExtResource( 9 )
+
+[node name="DirtRocks3" type="Sprite" parent="BG/Dirt" index="9"]
+position = Vector2( 3600, 144 )
+rotation = -0.523598
+texture = ExtResource( 9 )
+
+[node name="DirtRocks4" type="Sprite" parent="BG/Dirt" index="10"]
+position = Vector2( 3200, 360 )
+rotation = -0.523598
+texture = ExtResource( 9 )
+
+[node name="DirtRocks5" type="Sprite" parent="BG/Dirt" index="11"]
+position = Vector2( 2408, 448 )
+rotation = -0.523598
+texture = ExtResource( 9 )
+
+[node name="DirtRocks6" type="Sprite" parent="BG/Dirt" index="12"]
+position = Vector2( 2480, 280 )
+rotation = 1.57079
+texture = ExtResource( 9 )
+
+[node name="DirtRocks8" type="Sprite" parent="BG/Dirt" index="13"]
+position = Vector2( 2032, 192 )
+rotation = 1.57079
+texture = ExtResource( 9 )
+
+[node name="DirtRocks9" type="Sprite" parent="BG/Dirt" index="14"]
+position = Vector2( 1336, 176 )
+rotation = 1.57079
+texture = ExtResource( 9 )
+
+[node name="DirtRocks10" type="Sprite" parent="BG/Dirt" index="15"]
+position = Vector2( 1440, 208 )
+rotation = -0.261799
+texture = ExtResource( 9 )
+
+[node name="DirtRocks11" type="Sprite" parent="BG/Dirt" index="16"]
+position = Vector2( 696, -64 )
+rotation = -0.261799
+texture = ExtResource( 9 )
+
+[node name="DirtRocks12" type="Sprite" parent="BG/Dirt" index="17"]
+position = Vector2( 880, -104 )
+rotation = -0.261799
+texture = ExtResource( 9 )
+
+[node name="DirtRocks13" type="Sprite" parent="BG/Dirt" index="18"]
+position = Vector2( 984, -40 )
+rotation = -3.14159
+texture = ExtResource( 9 )
+
+[node name="DirtRocks7" type="Sprite" parent="BG/Dirt" index="19"]
+position = Vector2( 2280, 248 )
+rotation = 1.309
+texture = ExtResource( 9 )
+
+[node name="GrassEdges2" parent="BG" index="1" instance=ExtResource( 10 )]
+position = Vector2( 1040, -176 )
+rotation = 0.523598
+scale = Vector2( 0.405492, 0.377984 )
+
+[node name="GrassEdges4" parent="BG" index="2" instance=ExtResource( 10 )]
+position = Vector2( 1064, 88 )
+rotation = 0.261799
+scale = Vector2( 0.405492, 0.377984 )
+
+[node name="GrassEdges5" parent="BG" index="3" instance=ExtResource( 10 )]
+position = Vector2( 800, 56 )
+rotation = 0.785397
+scale = Vector2( 0.405492, 0.377984 )
+
+[node name="GrassEdges6" parent="BG" index="4" instance=ExtResource( 10 )]
+position = Vector2( 1520, 112 )
+rotation = 0.785397
+scale = Vector2( 0.405492, 0.377984 )
+
+[node name="GrassEdges7" parent="BG" index="5" instance=ExtResource( 10 )]
+position = Vector2( 1248, 312 )
+rotation = 0.523598
+scale = Vector2( 0.405492, 0.377984 )
+
+[node name="GrassEdges8" parent="BG" index="6" instance=ExtResource( 10 )]
+position = Vector2( 2280, 552 )
+rotation = 0.523598
+scale = Vector2( 0.405492, 0.377984 )
+
+[node name="GrassEdges9" parent="BG" index="7" instance=ExtResource( 10 )]
+position = Vector2( 2480, 536 )
+rotation = -0.261799
+scale = Vector2( 0.405492, 0.377984 )
+
+[node name="GrassEdges10" parent="BG" index="8" instance=ExtResource( 10 )]
+position = Vector2( 2272, -56.0001 )
+rotation = -0.261799
+scale = Vector2( 0.450682, 0.462793 )
+
+[node name="GrassEdges11" parent="BG" index="9" instance=ExtResource( 10 )]
+position = Vector2( 2032, 152 )
+rotation = -0.261799
+scale = Vector2( 0.450682, 0.462793 )
+
+[node name="GrassEdges12" parent="BG" index="10" instance=ExtResource( 10 )]
+position = Vector2( 2840, 408 )
+rotation = 0.261799
+scale = Vector2( 0.450682, 0.462793 )
+
+[node name="GrassEdges13" parent="BG" index="11" instance=ExtResource( 10 )]
+position = Vector2( 2984, 104 )
+rotation = 0.261799
+scale = Vector2( 0.450682, 0.462793 )
+
+[node name="GrassEdges14" parent="BG" index="12" instance=ExtResource( 10 )]
+position = Vector2( 3760, -8.00001 )
+rotation = 0.261799
+scale = Vector2( 0.450682, 0.462793 )
+
+[node name="GrassEdges15" parent="BG" index="13" instance=ExtResource( 10 )]
+position = Vector2( 3792, 536 )
+rotation = -0.261799
+scale = Vector2( 0.450682, 0.462793 )
+
+[node name="GrassEdges16" parent="BG" index="14" instance=ExtResource( 10 )]
+position = Vector2( 5168, 416 )
+rotation = -0.261799
+scale = Vector2( 0.450682, 0.462793 )
+
+[node name="GrassEdges17" parent="BG" index="15" instance=ExtResource( 10 )]
+position = Vector2( 5144, 104 )
+rotation = 0.523598
+scale = Vector2( 0.450682, 0.462793 )
+
+[node name="GrassEdges18" parent="BG" index="16" instance=ExtResource( 10 )]
+position = Vector2( 4704, 56 )
+rotation = -0.261799
+scale = Vector2( 0.450682, 0.462793 )
+
+[node name="GrassEdges19" parent="BG" index="17" instance=ExtResource( 10 )]
+position = Vector2( 4912, 7.99986 )
+rotation = -1.0472
+scale = Vector2( 0.450682, 0.462793 )
+
+[node name="GrassEdges20" parent="BG" index="18" instance=ExtResource( 10 )]
+position = Vector2( 4840, 512 )
+rotation = -2.35619
+scale = Vector2( 0.450682, 0.462793 )
+
+[node name="GrassEdges21" parent="BG" index="19" instance=ExtResource( 10 )]
+position = Vector2( 4616, 480 )
+rotation = -4.18878
+scale = Vector2( 0.450682, 0.462793 )
+
+[node name="GrassEdges3" parent="BG" index="20" instance=ExtResource( 10 )]
+position = Vector2( 688, -136 )
+scale = Vector2( 0.405492, 0.377984 )

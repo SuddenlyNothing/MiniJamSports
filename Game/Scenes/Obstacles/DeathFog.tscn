@@ -11,7 +11,7 @@ _data = {
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.496377, 1 )
-colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.33387, 0.872423, 0.941895, 1, 0, 0, 0, 0 )
 
 [sub_resource type="GradientTexture" id=3]
 gradient = SubResource( 2 )
@@ -72,6 +72,7 @@ shape = SubResource( 5 )
 [node name="Node" type="Node" parent="."]
 
 [node name="Line2D" type="Line2D" parent="Node"]
+visible = false
 material = SubResource( 7 )
 z_index = 100
 width = 1000.0
