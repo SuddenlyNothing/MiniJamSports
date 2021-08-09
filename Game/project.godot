@@ -33,6 +33,7 @@ config/icon="res://Assets/Obstacles/Box.png"
 [autoload]
 
 Global="*res://Scenes/Globals/Global.tscn"
+Music="*res://Assets/Music.tscn"
 
 [display]
 

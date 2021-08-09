@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Levels/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Obstacles/Bounce.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/BG/DirtBase.tres" type="Texture" id=5]
 [ext_resource path="res://Assets/BG/DirtRocks0.tres" type="Texture" id=6]
 [ext_resource path="res://Assets/BG/GrassEdge0.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/SFX/Dragging-Collisions/Wood_on_Stone_Collision.wav" type="AudioStream" id=8]
 
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
@@ -55,6 +56,9 @@ position = Vector2( -0.942749, 2.82843 )
 z_index = -4
 gravity = 20.0
 
+[node name="Collision Sound" type="AudioStreamPlayer" parent="Obstacles/Bounce" index="5"]
+stream = ExtResource( 8 )
+
 [node name="Bounce2" parent="Obstacles" index="4" instance=ExtResource( 2 )]
 position = Vector2( 794.798, -211.544 )
 
@@ -62,6 +66,9 @@ position = Vector2( 794.798, -211.544 )
 position = Vector2( -0.942749, 2.82843 )
 z_index = -4
 gravity = 20.0
+
+[node name="Collision Sound" type="AudioStreamPlayer" parent="Obstacles/Bounce2" index="5"]
+stream = ExtResource( 8 )
 
 [node name="Bounce3" parent="Obstacles" index="5" instance=ExtResource( 2 )]
 position = Vector2( 1053.86, 148.888 )
@@ -71,6 +78,9 @@ position = Vector2( -0.942749, 2.82843 )
 z_index = -4
 gravity = 20.0
 
+[node name="Collision Sound" type="AudioStreamPlayer" parent="Obstacles/Bounce3" index="5"]
+stream = ExtResource( 8 )
+
 [node name="Bounce4" parent="Obstacles" index="6" instance=ExtResource( 2 )]
 position = Vector2( 1310.79, -210.092 )
 
@@ -79,6 +89,9 @@ position = Vector2( -0.942749, 2.82843 )
 z_index = -4
 gravity = 10.0
 
+[node name="Collision Sound" type="AudioStreamPlayer" parent="Obstacles/Bounce4" index="5"]
+stream = ExtResource( 8 )
+
 [node name="BG" type="Node2D" parent="." index="5"]
 scale = Vector2( 1.02, 1 )
 
@@ -86,7 +99,7 @@ scale = Vector2( 1.02, 1 )
 z_index = -100
 
 [node name="DirtBase" type="Sprite" parent="BG/Dirt" index="0"]
-position = Vector2( 756.447, -27.0962 )
+position = Vector2( 756.447, -31.4037 )
 scale = Vector2( 11.4892, 3.56806 )
 texture = ExtResource( 5 )
 

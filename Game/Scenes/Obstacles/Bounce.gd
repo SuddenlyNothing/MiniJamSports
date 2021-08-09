@@ -12,6 +12,7 @@ func _on_Bounce_body_entered(body) -> void:
 	if not body is RigidBody2D:
 		return
 	body.apply_central_impulse(global_position.direction_to(body.global_position) * bounce_force)
+	$"Collision Sound".play(0)
 	
 #	collision_shape.call_deferred("set_disabled", true)
 #	reactivate_timer.start(reactivate_time)
