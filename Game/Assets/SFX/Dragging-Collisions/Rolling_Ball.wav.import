@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Rolling_Ball.wav-9e50041fe690caf0e960c18aaabf54ba.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Dragging-Collisions/Rolling_Ball.wav"
+dest_files=[ "res://.import/Rolling_Ball.wav-9e50041fe690caf0e960c18aaabf54ba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
