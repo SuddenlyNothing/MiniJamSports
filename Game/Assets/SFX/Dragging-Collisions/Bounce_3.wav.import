@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bounce_3.wav-44419b5b09416f4f2b5b0e82e1039750.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Dragging-Collisions/Bounce_3.wav"
+dest_files=[ "res://.import/Bounce_3.wav-44419b5b09416f4f2b5b0e82e1039750.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

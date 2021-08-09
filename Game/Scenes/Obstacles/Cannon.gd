@@ -27,8 +27,10 @@ func set_shoot_time(time):
 	shoot_timer.wait_time = time
 
 
+
 func _on_ShootTimer_timeout():
 	var cannon_ball := CannonBall.instance()
 	var dir := Vector2.UP.rotated(deg2rad($Barrel.rotation_degrees))
 	cannon_ball.init(cannon_ball_position.global_position, dir)
 	get_parent().add_child(cannon_ball)
+	

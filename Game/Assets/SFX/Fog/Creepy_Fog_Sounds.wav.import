@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Creepy_Fog_Sounds.wav-f1bf182a1b3789df7e8fa2fa90d28836.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Fog/Creepy_Fog_Sounds.wav"
+dest_files=[ "res://.import/Creepy_Fog_Sounds.wav-f1bf182a1b3789df7e8fa2fa90d28836.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
